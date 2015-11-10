@@ -124,7 +124,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
 
         }
 
-        /** Dispatch a response event */
+        /* Dispatch a response event */
         $this->dispatcher->dispatch('response', new ResponseEvent($response, $request));
 
         return $response;

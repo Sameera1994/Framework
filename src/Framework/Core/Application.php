@@ -101,8 +101,8 @@ class Application implements HttpKernelInterface, ApplicationInterface
     ) {
         $this->routes = $routes;
         $this->dispatcher = $dispatcher;
-        /** $this->resolver = new ControllerResolver(); */
-        /** $this->matcher = new UrlMatcher(); */
+        /* $this->resolver = new ControllerResolver(); */
+        /* $this->matcher = new UrlMatcher(); */
     }
 
     // --------------------------------------------------------------------------
@@ -132,22 +132,22 @@ class Application implements HttpKernelInterface, ApplicationInterface
 
         $this->dispatcher->dispatch('request', $event);
 
-        /** Create a context using the current request */
+        /* Create a context using the current request */
         $context = new RequestContext();
         $context->fromRequest($request);
 
         $matcher = new UrlMatcher($this->routes, $context);
-        /** $resolver = new HttpKernel\Controller\ControllerResolver(); */
+        /* $resolver = new HttpKernel\Controller\ControllerResolver(); */
 
         try {
-            /** $request->attributes->add($matcher->match($request->getPathInfo())); */
+            /* $request->attributes->add($matcher->match($request->getPathInfo())); */
             $attributes = $matcher->match($request->getPathInfo());
 
-            /** $controller = $resolver->getController($request); */
+            /* $controller = $resolver->getController($request); */
             $controller = $attributes['controller'];
             unset($attributes['controller']);
 
-            /** $response = call_user_func('render_template', $request); */
+            /* $response = call_user_func('render_template', $request); */
             $response = call_user_func_array($controller, $attributes);
 
         } catch (ResourceNotFoundException $e) {
