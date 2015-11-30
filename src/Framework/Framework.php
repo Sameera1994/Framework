@@ -56,7 +56,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      *
      * @api
      */
-    const VERSION = '1.4.0';
+    const VERSION = '1.5.0';
 
     // --------------------------------------------------------------------------
 
