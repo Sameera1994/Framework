@@ -20,10 +20,10 @@
     },
     "require": {
         "php": ">=5.6.10",
-        "symfony/routing": "2.7.*",
-        "symfony/http-kernel": "2.7.*",
-        "symfony/http-foundation": "2.7.*",
-        "symfony/event-dispatcher": "2.7.*",
+        "symfony/routing": "3.0.*",
+        "symfony/http-kernel": "3.0.*",
+        "symfony/http-foundation": "3.0.*",
+        "symfony/event-dispatcher": "3.0.*",
         "ucsdmath/dependency-injection": "1.5.x-dev"
     },
     "require-dev": {
