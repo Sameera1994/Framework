@@ -25,10 +25,10 @@ use Symfony\Component\HttpFoundation\Request;
  *
  * Method list:
  *
- * @method __construct();
- * @method __destruct();
- * @method setRequest(Request $request);
- * @method getRequest();
+ * @method RequestEventInterface __construct();
+ * @method void __destruct();
+ * @method RequestEventInterface getRequest();
+ * @method RequestEventInterface setRequest(Request $request);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *
