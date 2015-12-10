@@ -23,12 +23,12 @@ use Symfony\Component\HttpFoundation\Request;
  * triggered through the dispacher. This is used as an extension to the Symfony
  * {@link Symfony\Component\EventDispatcher\Event}.
  *
- * Method list:
+ * Method list: (+) @api, (-) protected or private visibility.
  *
- * @method RequestEventInterface __construct();
- * @method void __destruct();
- * @method RequestEventInterface getRequest();
- * @method RequestEventInterface setRequest(Request $request);
+ * (+) RequestEventInterface __construct();
+ * (+) void __destruct();
+ * (+) RequestEventInterface getRequest();
+ * (+) RequestEventInterface setRequest(Request $request);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *

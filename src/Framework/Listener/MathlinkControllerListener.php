@@ -19,9 +19,9 @@ use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
  * provides routine framework methods that are commonly used throughout the framework.
  * MathlinkControllerListener checks events dispatched.
  *
- * Method list:
+ * Method list: (+) @api, (-) protected or private visibility.
  *
- * @method onCoreController(FilterControllerEvent $event);
+ * (+) onCoreController(FilterControllerEvent $event);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *

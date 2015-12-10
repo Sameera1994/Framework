@@ -48,15 +48,15 @@ use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
  * If a default route is proved, any URL not specified in the controller will dispatch
  * the user to the default location and override any error message.
  *
- * Method list:
+ * Method list: (+) @api, (-) protected or private visibility.
  *
- * @method HttpKernelInterface __construct(RouteCollection $routes, EventDispatcher $dispatcher);
- * @method void                __destruct();
- * @method handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true);
- * @method setDefaultRoute($defaultRoute);
- * @method map($path, $controller);
- * @method on($event, $callback);
- * @method fire($event);
+ * (+) HttpKernelInterface __construct(RouteCollection $routes, EventDispatcher $dispatcher);
+ * (+) void                __destruct();
+ * (+) handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true);
+ * (+) setDefaultRoute($defaultRoute);
+ * (+) map($path, $controller);
+ * (+) on($event, $callback);
+ * (+) fire($event);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *

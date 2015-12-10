@@ -38,10 +38,10 @@ use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
  * Being extensible means that the developer should be able to easily hook into
  * the framework life cycle to modify the way the request is handled.
  *
- * Method list:
+ * Method list: (+) @api, (-) protected or private visibility.
  *
- * @method __construct();
- * @method handle();
+ * (+) __construct();
+ * (+) handle();
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *
