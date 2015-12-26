@@ -21,6 +21,6 @@ interface RequestEventInterface
     /**
      * Constants.
      */
-    const REQUIRED_PHP_VERSION = '5.6.10';
+    const REQUIRED_PHP_VERSION = '7.0.0';
     const DEFAULT_CHARSET = 'UTF-8';
 }
