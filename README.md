@@ -15,7 +15,7 @@ adding the ucsdmath/framework package to your composer.json file:
 
 ```
 "require": {
-    "php": ">=5.6.10",
+    "php": ">=7.0.0",
     "ucsdmath/framework": "dev-master"
 },
 ```
