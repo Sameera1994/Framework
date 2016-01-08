@@ -2,17 +2,14 @@
     "name": "ucsdmath/framework",
     "description": "A top controller, event listener, and router for application testing",
     "keywords": ["core", "event", "router", "dispatcher", "httpkernel", "ucsdmath"],
-    "homepage": "https://github.com/UCSDMath",
+    "homepage": "https://github.com/ucsdmath",
     "type": "library",
     "license": "MIT",
     "time": "2015-12-05",
     "minimum-stability": "dev",
     "prefer-stable": true,
     "authors": [
-        {
-            "name": "Daryl Eisner",
-            "email": "deisner@ucsd.edu"
-        }
+        {"name": "Daryl Eisner", "email": "deisner@ucsd.edu"}
     ],
     "support": {
         "source": "https://github.com/UCSDMath/Framework",
