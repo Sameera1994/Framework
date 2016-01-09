@@ -1,7 +1,7 @@
 {
     "name": "ucsdmath/framework",
     "description": "A top controller, event listener, and router for application testing",
-    "keywords": ["core", "event", "router", "dispatcher", "httpkernel", "ucsdmath"],
+    "keywords": ["framework", "ucsdmath", "event", "core", "router", "dispatcher", "httpkernel", "component"],
     "homepage": "https://github.com/ucsdmath",
     "type": "library",
     "license": "MIT",
