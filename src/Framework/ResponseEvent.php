@@ -1,0 +1,96 @@
+<?php
+
+/*
+ * This file is part of the UCSDMath package.
+ *
+ * (c) UCSD Mathematics | Math Computing Support <mathhelp@math.ucsd.edu>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+namespace UCSDMath\Framework;
+
+use Symfony\Component\EventDispatcher\Event;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+
+/**
+ * ResponseEvent is the default implementation of {@link ResponseEventInterface} which
+ * provides routine framework methods that are commonly used throughout the framework.
+ *
+ * Each time the framework handles a Request, a ResponseEvent event is now dispatched
+ *
+ * Method list: (+) @api, (-) protected or private visibility.
+ *
+ * (+) __construct();
+ * (+) getResponse();
+ * (+) getRequest();
+ *
+ * @author Daryl Eisner <deisner@ucsd.edu>
+ *
+ * @api
+ */
+class ResponseEvent extends Event implements ResponseEventInterface
+{
+    /**
+     * Constants.
+     *
+     * @var string VERSION  A version number
+     *
+     * @api
+     */
+    const VERSION = '1.6.0';
+
+    // --------------------------------------------------------------------------
+
+    /**
+     * Properties.
+     */
+    protected $request;
+    protected $response;
+
+    // --------------------------------------------------------------------------
+
+    /**
+     * Constructor.
+     *
+     * @param Response  $response  A Response instance
+     * @param Request   $response  A Request instance
+     *
+     * @api
+     */
+    public function __construct(
+        Response $response,
+        Request $request
+    ) {
+        $this->response = $response;
+        $this->request = $request;
+    }
+
+    // --------------------------------------------------------------------------
+
+    /**
+     *
+     * @return Response Interface instance
+     *
+     * @api
+     */
+    public function getResponse()
+    {
+        return $this->response;
+    }
+
+    // --------------------------------------------------------------------------
+
+    /**
+     *
+     * @return Request Interface instance
+     *
+     * @api
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+}

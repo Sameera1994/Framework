@@ -110,6 +110,8 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      */
     public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
     {
+        $this->matcher->getContext()->fromRequest($request);
+
         try {
             $request->attributes->add($this->matcher->match($request->getPathInfo()));
             $controller = $this->resolver->getController($request);
