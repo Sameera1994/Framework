@@ -1,5 +1,13 @@
 # Framework
-
+<table border="0">
+  <tr>
+    <td width="310"><img height="160" width="310"alt="UCSDMath - Mathlink" src="https://github.com/ucsdmath/Testing/blob/master/ucsdmath-logo.png"></td>
+    <td><h3>A Development Project in PHP</h3>
+        <p><strong>UCSDMath</strong> provides a testing framework for general internal Intranet software applications for the UCSD, Department of Mathematics. This is used for development and testing only. [not for production]</p>
+    </td>
+  </tr>
+</table>
+---
 [![Latest Stable Version](https://poser.pugx.org/ucsdmath/Framework/v/stable)](https://packagist.org/packages/ucsdmath/Framework)
 [![License](https://poser.pugx.org/ucsdmath/Framework/license)](https://packagist.org/packages/ucsdmath/Framework)
 [![Total Downloads](https://poser.pugx.org/ucsdmath/Framework/downloads)](https://packagist.org/packages/ucsdmath/Framework)
