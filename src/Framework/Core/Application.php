@@ -205,7 +205,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @api
      */
-    public function map($path, $controller)
+    public function map($path, $controller): self
     {
         $this->routes->add($path, new Route($path, array('controller' => $controller)));
 
@@ -224,7 +224,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @api
      */
-    public function setDefaultRoute($defaultRoute = null)
+    public function setDefaultRoute($defaultRoute = null): self
     {
         $this->defaultRoute = rtrim($defaultRoute, '/\\') . '/';
 
@@ -251,7 +251,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @api
      */
-    public function on($event, $callback)
+    public function on($event, $callback): self
     {
         $this->dispatcher->addListener($event, $callback);
 
@@ -283,7 +283,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @api
      */
-    public function startupApplication()
+    public function startupApplication(): self
     {
         $this->service = ServiceRequestContainer::init();
         $this->config = $this->service->get('Config');

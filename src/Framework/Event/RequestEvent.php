@@ -82,7 +82,7 @@ class RequestEvent extends Event implements RequestEventInterface
      *
      * @api
      */
-    public function setRequest(Request $request)
+    public function setRequest(Request $request): self
     {
         $this->request = $request;
 
