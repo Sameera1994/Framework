@@ -105,11 +105,11 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      * @throws \ResourceNotFoundException When a controller not found occurs during processing
      * @throws \Exception When an Exception occurs during processing
      *
-     * @return Response Interface instance
+     * @return Response
      *
      * @api
      */
-    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true): Response
     {
         $this->matcher->getContext()->fromRequest($request);
 

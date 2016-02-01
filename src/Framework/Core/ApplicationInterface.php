@@ -12,6 +12,8 @@ declare(strict_types=1);
 
 namespace UCSDMath\Framework\Core;
 
+use Symfony\Component\HttpKernel\HttpKernelInterface;
+
 /**
  * ApplicationInterface is the interface implemented by all {@link UCSDMath\Framework\Core\Application} classes.
  *
@@ -33,22 +35,22 @@ interface ApplicationInterface
      *
      * @param String  $defaultRoute  A defined URI path
      *
-     * @return HttpKernelInterface
+     * @return ApplicationInterface
      *
      * @api
      */
-    public function setDefaultRoute($defaultRoute = null);
+    public function setDefaultRoute(string $defaultRoute = null): ApplicationInterface;
 
     // --------------------------------------------------------------------------
 
     /**
      * Redirect to a location.
      *
-     * @param String  $path  A defined URI path
+     * @param string  $path  A defined URI path
      *
      * @api
      */
-    public function redirectRoute($path);
+    public function redirectRoute(string $path);
 
     // --------------------------------------------------------------------------
 
@@ -66,7 +68,7 @@ interface ApplicationInterface
      *
      * @api
      */
-    public function map($path, $controller);
+    public function map(string $path, $controller): HttpKernelInterface;
 
     // --------------------------------------------------------------------------
 
@@ -81,23 +83,23 @@ interface ApplicationInterface
      *
      * @see http://en.wikipedia.org/wiki/Observer_pattern
      *
-     * @param String  $path        A defined URI path
-     * @param Object  $controller  A callback function (reference a defined closure)
+     * @param EventDispatcher  $event     A defined URI path
+     * @param Object           $callback  A callback function (reference a defined closure)
      *
      * @return HttpKernelInterface
      *
      * @api
      */
-    public function on($event, $callback);
+    public function on($event, $callback): HttpKernelInterface;
 
     // --------------------------------------------------------------------------
 
     /**
      * Tell dispatcher to notify all the listeners he knows when some event occurs.
      *
-     * @param Dispatcher  $event   A Dispatcher event
+     * @param EventDispatcher  $event   A Dispatcher event
      *
-     * @return  Dispached event
+     * @return  A dispached event
      *
      * @api
      */
@@ -108,9 +110,9 @@ interface ApplicationInterface
     /**
      * Bootstrap any needed resources for the core application.
      *
-     * @return HttpKernelInterface
+     * @return ApplicationInterface
      *
      * @api
      */
-    public function startupApplication();
+    public function startupApplication(): ApplicationInterface;
 }

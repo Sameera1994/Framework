@@ -178,11 +178,11 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Redirect to a location.
      *
-     * @param String  $path  A defined URI path
+     * @param string  $path  A defined URI path
      *
      * @api
      */
-    public function redirectRoute($path)
+    public function redirectRoute(string $path)
     {
         $response = new RedirectResponse($path);
         $response->send();
@@ -205,7 +205,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @api
      */
-    public function map($path, $controller): self
+    public function map(string $path, $controller): HttpKernelInterface
     {
         $this->routes->add($path, new Route($path, array('controller' => $controller)));
 
@@ -220,11 +220,11 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @param String  $defaultRoute  A defined URI path
      *
-     * @return HttpKernelInterface
+     * @return ApplicationInterface
      *
      * @api
      */
-    public function setDefaultRoute($defaultRoute = null): self
+    public function setDefaultRoute(string $defaultRoute = null): ApplicationInterface
     {
         $this->defaultRoute = rtrim($defaultRoute, '/\\') . '/';
 
@@ -244,14 +244,14 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @see http://en.wikipedia.org/wiki/Observer_pattern
      *
-     * @param String  $path        A defined URI path
-     * @param Object  $controller  A callback function (reference a defined closure)
+     * @param EventDispatcher  $event     A defined URI path
+     * @param Object           $callback  A callback function (reference a defined closure)
      *
      * @return HttpKernelInterface
      *
      * @api
      */
-    public function on($event, $callback): self
+    public function on($event, $callback): HttpKernelInterface
     {
         $this->dispatcher->addListener($event, $callback);
 
@@ -263,9 +263,9 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Tell dispatcher to notify all the listeners he knows when some event occurs.
      *
-     * @param Dispatcher  $event   A Dispatcher event
+     * @param EventDispatcher  $event   A Dispatcher event
      *
-     * @return  Dispached event
+     * @return  A dispached event
      *
      * @api
      */
@@ -279,11 +279,11 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Bootstrap any needed resources for the core application.
      *
-     * @return HttpKernelInterface
+     * @return ApplicationInterface
      *
      * @api
      */
-    public function startupApplication(): self
+    public function startupApplication(): ApplicationInterface
     {
         $this->service = ServiceRequestContainer::init();
         $this->config = $this->service->get('Config');
