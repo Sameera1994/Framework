@@ -50,10 +50,11 @@ class MathlinkControllerListener implements FrameworkInterface
 
     /**
      * Check event status.
+     *
      *   - HttpKernelInterface::MASTER_REQUEST === 1
      *   - HttpKernelInterface::SUB_REQUEST === 2
      *
-     * @param FilterControllerEvent  $event A FilterControllerEvent instance
+     * @param FilterControllerEvent  $event A FilterControllerEvent
      *
      * @api
      */

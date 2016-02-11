@@ -91,8 +91,8 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Constructor.
      *
-     * @param RouteCollection  $routes      A RouteCollection Interface instance
-     * @param EventDispatcher  $dispatcher  A EventDispatcher Interface instance
+     * @param RouteCollection  $routes      A RouteCollection Interface
+     * @param EventDispatcher  $dispatcher  A EventDispatcher Interface
      *
      * @api
      */
@@ -115,14 +115,14 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * {@link http://symfony.com/doc/current/components/event_dispatcher/introduction.html#usage}
      *
-     * @param Request $request  A Request instance
+     * @param Request $request  A Request Interface
      * @param int     $type     A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
-     * @param Boolean $catch    A option to catch exceptions or not
+     * @param bool    $catch    A option to catch exceptions or not
      *
      * @throws \Exception  when an Exception occurs during processing
      * @throws \ResourceNotFoundException  when a specified route is not registered or found
      *
-     * @return Response Interface instance
+     * @return Response Interface
      *
      * @api
      */
@@ -176,17 +176,17 @@ class Application implements HttpKernelInterface, ApplicationInterface
     // --------------------------------------------------------------------------
 
     /**
-     * Redirect to a location.
+     * Sends the redirect (RedirectResponse extends Response).
      *
      * @param string  $path  A defined URI path
      *
+     * @return Response
      * @api
      */
     public function redirectRoute(string $path)
     {
         $response = new RedirectResponse($path);
         $response->send();
-        exit;
     }
 
     // --------------------------------------------------------------------------
@@ -198,7 +198,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * Associates an URI or URL with a callback function.
      *
-     * @param String  $path        A defined URI path
+     * @param string  $path        A defined URI path
      * @param Object  $controller  A callback function (reference a defined closure)
      *
      * @return HttpKernelInterface
@@ -218,7 +218,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * Set the application default route or location URI (e.g., /sso/1/news-manager/).
      * If any problem with mapping URL Routing, we default to this location.
      *
-     * @param String  $defaultRoute  A defined URI path
+     * @param string  $defaultRoute  A defined URI path
      *
      * @return ApplicationInterface
      *
@@ -263,9 +263,9 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Tell dispatcher to notify all the listeners he knows when some event occurs.
      *
-     * @param EventDispatcher  $event   A Dispatcher event
+     * @param EventDispatcher  $event   A EventDispatcher Interface
      *
-     * @return  A dispached event
+     * @return A dispached event
      *
      * @api
      */

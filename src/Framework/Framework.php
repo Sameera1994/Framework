@@ -73,9 +73,9 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
     /**
      * Constructor.
      *
-     * @param EventDispatcher             $dispatcher A EventDispatcher instance
-     * @param UrlMatcherInterface         $matcher    A UrlMatcherInterface instance
-     * @param ControllerResolverInterface $resolver   A ControllerResolverInterface instance
+     * @param EventDispatcher             $dispatcher A EventDispatcher
+     * @param UrlMatcherInterface         $matcher    A UrlMatcherInterface
+     * @param ControllerResolverInterface $resolver   A ControllerResolverInterface
      *
      * @api
      */
@@ -98,9 +98,9 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      * HttpKernel allows us to use event listeners and does the work by dispatching those events.
      * Basically we are creating an EventDispatcher and a controller resolver in this handle method.
      *
-     * @param Request $request  A Request instance
-     * @param integer $type     A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
-     * @param Boolean $catch    A option to catch exceptions or not
+     * @param Request $request  A Request
+     * @param int     $type     A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
+     * @param bool    $catch    A option to catch exceptions or not
      *
      * @throws \ResourceNotFoundException When a controller not found occurs during processing
      * @throws \Exception When an Exception occurs during processing

@@ -56,8 +56,8 @@ class ResponseEvent extends Event implements ResponseEventInterface
     /**
      * Constructor.
      *
-     * @param Response  $response  A Response instance
-     * @param Request   $response  A Request instance
+     * @param Response  $response  A Response
+     * @param Request   $response  A Request
      *
      * @api
      */
@@ -72,8 +72,9 @@ class ResponseEvent extends Event implements ResponseEventInterface
     // --------------------------------------------------------------------------
 
     /**
+     * Get the current response.
      *
-     * @return Response Interface instance
+     * @return Response Interface
      *
      * @api
      */
@@ -85,8 +86,9 @@ class ResponseEvent extends Event implements ResponseEventInterface
     // --------------------------------------------------------------------------
 
     /**
+     * Get the current request.
      *
-     * @return Request Interface instance
+     * @return Request Interface
      *
      * @api
      */

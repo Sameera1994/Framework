@@ -33,7 +33,7 @@ interface ApplicationInterface
      * Set the application default route or location URI (e.g., /sso/1/news-manager/).
      * If any problem with mapping URL Routing, we default to this location.
      *
-     * @param String  $defaultRoute  A defined URI path
+     * @param string $defaultRoute  A defined URI path
      *
      * @return ApplicationInterface
      *
@@ -61,7 +61,7 @@ interface ApplicationInterface
      *
      * Associates an URI or URL with a callback function.
      *
-     * @param String  $path        A defined URI path
+     * @param string  $path        A defined URI path
      * @param Object  $controller  A callback function (reference a defined closure)
      *
      * @return HttpKernelInterface
@@ -83,7 +83,7 @@ interface ApplicationInterface
      *
      * @see http://en.wikipedia.org/wiki/Observer_pattern
      *
-     * @param EventDispatcher  $event     A defined URI path
+     * @param EventDispatcher  $event     A defined EventDispatcher Interface
      * @param Object           $callback  A callback function (reference a defined closure)
      *
      * @return HttpKernelInterface
@@ -97,9 +97,9 @@ interface ApplicationInterface
     /**
      * Tell dispatcher to notify all the listeners he knows when some event occurs.
      *
-     * @param EventDispatcher  $event   A Dispatcher event
+     * @param EventDispatcher  $event   A EventDispatcher Interface
      *
-     * @return  A dispached event
+     * @return A dispached event
      *
      * @api
      */

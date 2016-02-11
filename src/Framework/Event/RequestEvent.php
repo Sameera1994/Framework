@@ -74,9 +74,9 @@ class RequestEvent extends Event implements RequestEventInterface
      * and is used to hold any information related to it.
      *
      * This event must have access to the current request, using an attribute
-     * holding a Request instance.
+     * holding a Request.
      *
-     * @param Request $request  A Request instance
+     * @param Request $request  A Request
      *
      * @return RequestEvent Instance
      *
@@ -92,7 +92,7 @@ class RequestEvent extends Event implements RequestEventInterface
     // --------------------------------------------------------------------------
 
     /**
-     * Get a stored event
+     * Get a stored event.
      *
      * @return Request Instance
      *
