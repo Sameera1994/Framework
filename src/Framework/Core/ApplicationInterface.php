@@ -115,4 +115,6 @@ interface ApplicationInterface
      * @api
      */
     public function startupApplication(): ApplicationInterface;
+
+    // --------------------------------------------------------------------------
 }

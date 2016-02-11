@@ -24,4 +24,6 @@ interface RequestEventInterface
      */
     const REQUIRED_PHP_VERSION = '7.0.0';
     const DEFAULT_CHARSET = 'UTF-8';
+
+    // --------------------------------------------------------------------------
 }

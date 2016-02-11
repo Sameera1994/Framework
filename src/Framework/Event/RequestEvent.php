@@ -102,4 +102,6 @@ class RequestEvent extends Event implements RequestEventInterface
     {
         return $this->request;
     }
+
+    // --------------------------------------------------------------------------
 }

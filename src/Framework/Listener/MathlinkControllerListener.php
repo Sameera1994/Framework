@@ -72,4 +72,6 @@ class MathlinkControllerListener implements FrameworkInterface
             }
         }
     }
+
+    // --------------------------------------------------------------------------
 }

@@ -290,4 +290,6 @@ class Application implements HttpKernelInterface, ApplicationInterface
 
         return $this;
     }
+
+    // --------------------------------------------------------------------------
 }

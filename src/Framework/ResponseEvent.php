@@ -96,4 +96,6 @@ class ResponseEvent extends Event implements ResponseEventInterface
     {
         return $this->request;
     }
+
+    // --------------------------------------------------------------------------
 }

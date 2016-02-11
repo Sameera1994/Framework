@@ -70,4 +70,6 @@ abstract class AbstractFramework implements FrameworkInterface
     {
         static::$objectCount--;
     }
+
+    // --------------------------------------------------------------------------
 }
