@@ -19,12 +19,12 @@
         "symfony/http-kernel": "3.0.2",
         "symfony/http-foundation": "3.0.2",
         "symfony/event-dispatcher": "3.0.2",
-        "ucsdmath/dependency-injection": "1.6.0"
+        "ucsdmath/dependency-injection": "1.7.x-dev"
     },
     "require-dev": {
         "mockery/mockery": "0.9.4",
         "phpunit/phpunit": "5.2.6",
-        "ucsdmath/testing": "1.6.0",
+        "ucsdmath/testing": "1.7.x-dev",
         "squizlabs/php_codesniffer": "2.5.1"
     },
     "autoload": {
@@ -41,7 +41,7 @@
     "prefer-stable": true,
     "extra": {
         "branch-alias": {
-            "dev-master": "1.6.x-dev"
+            "dev-master": "1.7.x-dev"
         }
     }
 }
