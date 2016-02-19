@@ -62,7 +62,6 @@ class RequestEvent extends Event implements RequestEventInterface
      */
     public function __construct()
     {
-
     }
 
     // --------------------------------------------------------------------------
