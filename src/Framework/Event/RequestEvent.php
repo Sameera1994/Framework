@@ -44,7 +44,7 @@ class RequestEvent extends Event implements RequestEventInterface
      *
      * @api
      */
-    const VERSION = '1.6.0';
+    const VERSION = '1.7.0';
 
     // --------------------------------------------------------------------------
 
