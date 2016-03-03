@@ -18,6 +18,10 @@
 
 Framework is a testing and development library only. This is not to be used in a production.
 
+Copy this software from:
+- [Packagist.org](https://packagist.org/packages/ucsdmath/Framework)
+- [Github.com](https://github.com/ucsdmath/Framework)
+
 ## Installation using [Composer](http://getcomposer.org/)
 You can install the class ```Framework``` with Composer and Packagist by
 adding the ucsdmath/framework package to your composer.json file:
