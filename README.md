@@ -11,10 +11,10 @@
 [![Build Status](https://scrutinizer-ci.com/g/ucsdmath/Framework/badges/build.png?b=master)](https://scrutinizer-ci.com/g/ucsdmath/Framework/build-status/master)
 [![Latest Stable Version](https://poser.pugx.org/ucsdmath/Framework/v/stable)](https://packagist.org/packages/ucsdmath/Framework)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.0-8892BF.svg?style=flat)](https://php.net/)
-[![License](https://poser.pugx.org/ucsdmath/Framework/license)](https://packagist.org/packages/ucsdmath/Framework)
 [![Total Downloads](https://poser.pugx.org/ucsdmath/Framework/downloads)](https://packagist.org/packages/ucsdmath/Framework)
 [![Latest Unstable Version](https://poser.pugx.org/ucsdmath/Framework/v/unstable)](https://packagist.org/packages/ucsdmath/Framework)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/ucsdmath/Framework/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/ucsdmath/Framework/?branch=master)
+[![License](https://poser.pugx.org/ucsdmath/Framework/license)](https://packagist.org/packages/ucsdmath/Framework)
 
 Framework is a testing and development library only. This is not to be used in a production.
 
