@@ -25,9 +25,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use UCSDMath\DependencyInjection\ServiceRequestContainer;
-use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 
 /**
  * Application is the default implementation of {@link HttpKernelInterface} which
@@ -253,7 +251,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Tell dispatcher to notify all the listeners he knows when some event occurs.
      *
-     * @param EventDispatcher  $event   A EventDispatcher Interface
+     * @param string  $event   A EventDispatcher Interface
      *
      * @return \Symfony\Component\EventDispatcher\Event A dispached event
      *
