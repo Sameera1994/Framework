@@ -161,9 +161,9 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @return \Symfony\Component\HttpFoundation\Response Send the response
      * @api
      */
-    public function newResponse(string $message, $error)
+    public function newResponse(string $message, $error): \Symfony\Component\HttpFoundation\Response
     {
-        $response = '';
+        $response = null;
 
         if (! is_null($this->defaultRoute)) {
             $this->redirectRoute($this->defaultRoute);
