@@ -152,21 +152,19 @@ class Application implements HttpKernelInterface, ApplicationInterface
             $response = call_user_func_array($controller, $attributes);
 
         } catch (ResourceNotFoundException $e) {
-            if (is_null($this->defaultRoute)) {
+            if (!is_null($this->defaultRoute)) {
+                $this->redirectRoute($this->defaultRoute);
+            } else {
                 /* HTTP 404 Response */
                 $response = new Response('Router could not resolve specified route. Route was not defined.', Response::HTTP_NOT_FOUND);
-            } else {
-                $this->redirectRoute($this->defaultRoute);
             }
 
         } catch (\Exception $e) {
             if (is_null($this->defaultRoute)) {
                 /* HTTP 500 Response */
                 $response = new Response('An internal server error (HTTP 500).', Response::HTTP_INTERNAL_SERVER_ERROR);
-
             } else {
                 $this->redirectRoute($this->defaultRoute);
-
             }
         }
 
