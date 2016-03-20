@@ -132,4 +132,6 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
 
         return $response;
     }
+
+    // --------------------------------------------------------------------------
 }
