@@ -122,7 +122,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @throws \Exception  when an Exception occurs during processing
      * @throws \ResourceNotFoundException  when a specified route is not registered or found
      *
-     * @return Response Interface
+     * @return \Symfony\Component\HttpFoundation\Response Sending the response back
      *
      * @api
      */
@@ -180,7 +180,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @param string  $path  A defined URI path
      *
-     * @return Response
+     * @return \Symfony\Component\HttpFoundation\Response Send the response
      * @api
      */
     public function redirectRoute(string $path)
@@ -201,7 +201,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @param string  $path        A defined URI path
      * @param Object  $controller  A callback function (reference a defined closure)
      *
-     * @return HttpKernelInterface
+     * @return \Symfony\Component\HttpKernel\HttpKernelInterface
      *
      * @api
      */
@@ -220,7 +220,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @param string  $defaultRoute  A defined URI path
      *
-     * @return ApplicationInterface
+     * @return \UCSDMath\Framework\Core\ApplicationInterface
      *
      * @api
      */
@@ -247,7 +247,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @param EventDispatcher  $event     A defined URI path
      * @param Object           $callback  A callback function (reference a defined closure)
      *
-     * @return HttpKernelInterface
+     * @return \Symfony\Component\HttpKernel\HttpKernelInterface
      *
      * @api
      */
@@ -265,11 +265,11 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @param EventDispatcher  $event   A EventDispatcher Interface
      *
-     * @return A dispached event
+     * @return \Symfony\Component\EventDispatcher\Event A dispached event
      *
      * @api
      */
-    public function fire($event)
+    public function fire($event): \Symfony\Component\EventDispatcher\Event
     {
         return $this->dispatcher->dispatch($event);
     }
@@ -279,11 +279,11 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Bootstrap any needed resources for the core application.
      *
-     * @return ApplicationInterface
+     * @return \UCSDMath\Framework\Core\ApplicationInterface
      *
      * @api
      */
-    public function startupApplication(): ApplicationInterface
+    public function startupApplication(): \UCSDMath\Framework\Core\ApplicationInterface
     {
         $this->service = ServiceRequestContainer::init();
         $this->config = $this->service->get('Config');
