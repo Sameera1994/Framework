@@ -130,25 +130,17 @@ class Application implements HttpKernelInterface, ApplicationInterface
     {
         $event = new RequestEvent();
         $event->setRequest($request);
-
         $this->dispatcher->dispatch('request', $event);
 
         /* Create a context using the current request */
         $context = new RequestContext();
         $context->fromRequest($request);
-
         $matcher = new UrlMatcher($this->routes, $context);
-        /* $resolver = new HttpKernel\Controller\ControllerResolver(); */
 
         try {
-            /* $request->attributes->add($matcher->match($request->getPathInfo())); */
             $attributes = $matcher->match($request->getPathInfo());
-
-            /* $controller = $resolver->getController($request); */
             $controller = $attributes['controller'];
             unset($attributes['controller']);
-
-            /* $response = call_user_func('render_template', $request); */
             $response = call_user_func_array($controller, $attributes);
 
         } catch (ResourceNotFoundException $e) {
