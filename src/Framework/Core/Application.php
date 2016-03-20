@@ -80,6 +80,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * Properties.
      */
     protected $routes;
+    protected $service;
     protected $dispatcher;
     protected $resolver;
     protected $matcher;
@@ -102,8 +103,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
     ) {
         $this->routes = $routes;
         $this->dispatcher = $dispatcher;
-        /* $this->resolver = new ControllerResolver(); */
-        /* $this->matcher = new UrlMatcher(); */
+        $this->service = ServiceRequestContainer::init();
     }
 
     // --------------------------------------------------------------------------
@@ -275,7 +275,6 @@ class Application implements HttpKernelInterface, ApplicationInterface
      */
     public function startupApplication(): \UCSDMath\Framework\Core\ApplicationInterface
     {
-        $this->service = ServiceRequestContainer::init();
         $this->config = $this->service->get('Config');
 
         return $this;
