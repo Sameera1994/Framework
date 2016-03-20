@@ -163,6 +163,8 @@ class Application implements HttpKernelInterface, ApplicationInterface
      */
     public function newResponse(string $message, $error)
     {
+        $response = '';
+
         if (! is_null($this->defaultRoute)) {
             $this->redirectRoute($this->defaultRoute);
         } else {
