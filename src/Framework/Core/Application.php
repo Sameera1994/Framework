@@ -130,7 +130,6 @@ class Application implements HttpKernelInterface, ApplicationInterface
         $event->setRequest($request);
         $this->dispatcher->dispatch('request', $event);
 
-        /* Create a context using the current request */
         $context = new RequestContext();
         $context->fromRequest($request);
         $matcher = new UrlMatcher($this->routes, $context);
@@ -142,9 +141,9 @@ class Application implements HttpKernelInterface, ApplicationInterface
             $response = call_user_func_array($controller, $attributes);
 
         } catch (ResourceNotFoundException $e) {
-            $response = $this->newResponse('Router could not resolve specified route. Route was not defined.', Response::HTTP_NOT_FOUND);
+            $response = $this->errorResponse('Router could not resolve specified route. Route was not defined.' . $e, Response::HTTP_NOT_FOUND);
         } catch (\Exception $e) {
-            $response = $this->newResponse('An internal server error (HTTP 500).', Response::HTTP_INTERNAL_SERVER_ERROR);
+            $response = $this->errorResponse('An internal server error (HTTP 500).' . $e, Response::HTTP_INTERNAL_SERVER_ERROR);
         }
 
         return $response;
@@ -161,10 +160,8 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @return \Symfony\Component\HttpFoundation\Response Send the response
      * @api
      */
-    public function newResponse(string $message, $error): \Symfony\Component\HttpFoundation\Response
+    public function errorResponse(string $message, $error): \Symfony\Component\HttpFoundation\Response
     {
-        $response = null;
-
         if (! is_null($this->defaultRoute)) {
             $this->redirectRoute($this->defaultRoute);
         } else {
