@@ -83,7 +83,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
     protected $resolver;
     protected $matcher;
     protected $defaultRoute = null;
-    protected $cofig;
+    protected $config;
 
     // --------------------------------------------------------------------------
 
@@ -142,20 +142,31 @@ class Application implements HttpKernelInterface, ApplicationInterface
             $response = call_user_func_array($controller, $attributes);
 
         } catch (ResourceNotFoundException $e) {
-            if (!is_null($this->defaultRoute)) {
-                $this->redirectRoute($this->defaultRoute);
-            } else {
-                /* HTTP 404 Response */
-                $response = new Response('Router could not resolve specified route. Route was not defined.', Response::HTTP_NOT_FOUND);
-            }
-
+            $response = $this->newResponse('Router could not resolve specified route. Route was not defined.', Response::HTTP_NOT_FOUND);
         } catch (\Exception $e) {
-            if (is_null($this->defaultRoute)) {
-                /* HTTP 500 Response */
-                $response = new Response('An internal server error (HTTP 500).', Response::HTTP_INTERNAL_SERVER_ERROR);
-            } else {
-                $this->redirectRoute($this->defaultRoute);
-            }
+            $response = $this->newResponse('An internal server error (HTTP 500).', Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
+        return $response;
+    }
+
+    // --------------------------------------------------------------------------
+
+    /**
+     * Send new response if Route is null.
+     *
+     * @param string  $message  A message to send on error
+     * @param int     $error    A http error number
+     *
+     * @return \Symfony\Component\HttpFoundation\Response Send the response
+     * @api
+     */
+    public function newResponse(string $message, $error)
+    {
+        if (! is_null($this->defaultRoute)) {
+            $this->redirectRoute($this->defaultRoute);
+        } else {
+            $response = new Response($message, $error);
         }
 
         return $response;
@@ -232,8 +243,8 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @see http://en.wikipedia.org/wiki/Observer_pattern
      *
-     * @param EventDispatcher  $event     A defined URI path
-     * @param Object           $callback  A callback function (reference a defined closure)
+     * @param string  $event     A defined URI path
+     * @param Object  $callback  A callback function (reference a defined closure)
      *
      * @return \Symfony\Component\HttpKernel\HttpKernelInterface
      *
