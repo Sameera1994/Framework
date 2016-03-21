@@ -138,11 +138,8 @@ class Application implements HttpKernelInterface, ApplicationInterface
             $attributes = $matcher->match($request->getPathInfo());
             $controller = $attributes['controller'];
             unset($attributes['controller']);
-
             $response = call_user_func_array($controller, $attributes);
-
         } catch (ResourceNotFoundException $e) {
-            /* HTTP 404 Response */
             $response = $this->errorResponse('Router could not resolve specified route. Route was not defined.' . $e, Response::HTTP_NOT_FOUND);
         }
 
