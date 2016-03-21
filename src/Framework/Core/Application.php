@@ -117,6 +117,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @param int     $type     A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
      * @param bool    $catch    A option to catch exceptions or not
      *
+     * @throws \Exception  when an Exception occurs during processing
      * @throws \ResourceNotFoundException  when a specified route is not registered or found
      *
      * @return \Symfony\Component\HttpFoundation\Response Sending the response back
@@ -141,7 +142,9 @@ class Application implements HttpKernelInterface, ApplicationInterface
             $response = call_user_func_array($controller, $attributes);
 
         } catch (ResourceNotFoundException $e) {
+            /* HTTP 404 Response */
             $response = $this->errorResponse('Router could not resolve specified route. Route was not defined.' . $e, Response::HTTP_NOT_FOUND);
+        }
 
         return $response;
     }
