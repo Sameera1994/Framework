@@ -117,7 +117,6 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @param int     $type     A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
      * @param bool    $catch    A option to catch exceptions or not
      *
-     * @throws \Exception  when an Exception occurs during processing
      * @throws \ResourceNotFoundException  when a specified route is not registered or found
      *
      * @return \Symfony\Component\HttpFoundation\Response Sending the response back
@@ -138,13 +137,11 @@ class Application implements HttpKernelInterface, ApplicationInterface
             $attributes = $matcher->match($request->getPathInfo());
             $controller = $attributes['controller'];
             unset($attributes['controller']);
+
             $response = call_user_func_array($controller, $attributes);
 
         } catch (ResourceNotFoundException $e) {
             $response = $this->errorResponse('Router could not resolve specified route. Route was not defined.' . $e, Response::HTTP_NOT_FOUND);
-        } catch (\Exception $e) {
-            $response = $this->errorResponse('An internal server error (HTTP 500).' . $e, Response::HTTP_INTERNAL_SERVER_ERROR);
-        }
 
         return $response;
     }
@@ -162,6 +159,8 @@ class Application implements HttpKernelInterface, ApplicationInterface
      */
     public function errorResponse(string $message, $error): \Symfony\Component\HttpFoundation\Response
     {
+        $response = null;
+
         if (! is_null($this->defaultRoute)) {
             $this->redirectRoute($this->defaultRoute);
         } else {
