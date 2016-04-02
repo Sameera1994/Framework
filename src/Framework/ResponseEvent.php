@@ -49,8 +49,8 @@ class ResponseEvent extends Event implements ResponseEventInterface
     /**
      * Properties.
      */
-    protected $request;
     protected $response;
+    protected $request;
 
     // --------------------------------------------------------------------------
 
@@ -58,7 +58,7 @@ class ResponseEvent extends Event implements ResponseEventInterface
      * Constructor.
      *
      * @param Response  $response  A Response
-     * @param Request   $response  A Request
+     * @param Request   $request   A Request
      *
      * @api
      */
