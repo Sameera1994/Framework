@@ -13,8 +13,8 @@ declare(strict_types=1);
 
 namespace UCSDMath\Framework\Listener;
 
-use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
  * MathlinkControllerListener is the default implementation of {@link FrameworkInterface} which
