@@ -15,10 +15,10 @@
     },
     "require": {
         "php": "^7.0",
-        "symfony/routing": "3.0.4",
-        "symfony/http-kernel": "3.0.4",
-        "symfony/http-foundation": "3.0.4",
-        "symfony/event-dispatcher": "3.0.4",
+        "symfony/routing": "3.0.5",
+        "symfony/http-kernel": "3.0.5",
+        "symfony/http-foundation": "3.0.5",
+        "symfony/event-dispatcher": "3.0.5",
         "ucsdmath/functions": "1.7.x-dev",
         "ucsdmath/configuration": "1.7.x-dev",
         "ucsdmath/dependency-injection": "1.7.x-dev"
