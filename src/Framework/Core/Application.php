@@ -281,7 +281,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      */
     public function startupApplication(): \UCSDMath\Framework\Core\ApplicationInterface
     {
-        $this->config = $this->service->get('Config');
+        $this->config = $this->service->Config;
 
         return $this;
     }
