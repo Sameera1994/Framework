@@ -51,7 +51,7 @@ use UCSDMath\Framework\Framework;
  * Method list: (+) @api, (-) protected or private visibility.
  *
  * (+) HttpKernelInterface __construct(RouteCollection $routes, EventDispatcher $dispatcher);
- * (+) void                __destruct();
+ * (+) void __destruct();
  * (+) handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true);
  * (+) setDefaultRoute($defaultRoute);
  * (+) map($path, $controller);
@@ -67,7 +67,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Constants.
      *
-     * @var string VERSION  A version number
+     * @var string VERSION A version number
      *
      * @api
      */
@@ -91,14 +91,14 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Constructor.
      *
-     * @param RouteCollection  $routes      A RouteCollection Interface
-     * @param EventDispatcher  $dispatcher  A EventDispatcher Interface
+     * @param RouteCollection $routes     A RouteCollection Interface
+     * @param EventDispatcher $dispatcher A EventDispatcher Interface
      *
      * @api
      */
     public function __construct(
-        RouteCollection $routes,
-        EventDispatcher $dispatcher
+        \Symfony\Component\Routing\RouteCollection $routes,
+        \Symfony\Component\EventDispatcher\EventDispatcher $dispatcher
     ) {
         $this->routes = $routes;
         $this->dispatcher = $dispatcher;
@@ -114,9 +114,9 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * {@link http://symfony.com/doc/current/components/event_dispatcher/introduction.html#usage}
      *
-     * @param Request $request  A Request Interface
-     * @param int     $type     A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
-     * @param bool    $catch    A option to catch exceptions or not
+     * @param Request $request A Request Interface
+     * @param int     $type    A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
+     * @param bool    $catch   A option to catch exceptions or not
      *
      * @throws \Exception  when an Exception occurs during processing
      * @throws \ResourceNotFoundException  when a specified route is not registered or found
@@ -125,16 +125,14 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @api
      */
-    public function handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
+    public function handle(\Symfony\Component\HttpFoundation\Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true)
     {
         $event = new RequestEvent();
         $event->setRequest($request);
         $this->dispatcher->dispatch('request', $event);
-
         $context = new RequestContext();
         $context->fromRequest($request);
         $matcher = new UrlMatcher($this->routes, $context);
-
         try {
             $attributes = $matcher->match($request->getPathInfo());
             $controller = $attributes['controller'];
@@ -152,13 +150,13 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Send new response if Route is null.
      *
-     * @param string  $message  A message to send on error
-     * @param int     $error    A http error number
+     * @param string $message A message to send on error
+     * @param int    $error   A http error number
      *
      * @return \Symfony\Component\HttpFoundation\Response Send the response
      * @api
      */
-    public function errorResponse(string $message, $error): \Symfony\Component\HttpFoundation\Response
+    public function errorResponse(string $message, int $error): \Symfony\Component\HttpFoundation\Response
     {
         $response = null;
 
@@ -176,7 +174,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Sends the redirect (RedirectResponse extends Response).
      *
-     * @param string  $path  A defined URI path
+     * @param string $path A defined URI path
      *
      * @return \Symfony\Component\HttpFoundation\Response Send the response
      * @api
@@ -196,8 +194,8 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * Associates an URI or URL with a callback function.
      *
-     * @param string  $path        A defined URI path
-     * @param Object  $controller  A callback function (reference a defined closure)
+     * @param string $path       A defined URI path
+     * @param Object $controller A callback function (reference a defined closure)
      *
      * @return \Symfony\Component\HttpKernel\HttpKernelInterface
      *
@@ -216,7 +214,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * Set the application default route or location URI (e.g., /sso/1/news-manager/).
      * If any problem with mapping URL Routing, we default to this location.
      *
-     * @param string  $defaultRoute  A defined URI path
+     * @param string $defaultRoute A defined URI path
      *
      * @return \UCSDMath\Framework\Core\ApplicationInterface
      *
@@ -242,8 +240,8 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @see http://en.wikipedia.org/wiki/Observer_pattern
      *
-     * @param string  $event     A defined URI path
-     * @param Object  $callback  A callback function (reference a defined closure)
+     * @param string $event    A defined URI path
+     * @param Object $callback A callback function (reference a defined closure)
      *
      * @return \Symfony\Component\HttpKernel\HttpKernelInterface
      *
@@ -261,7 +259,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Tell dispatcher to notify all the listeners he knows when some event occurs.
      *
-     * @param string  $event   A EventDispatcher Interface
+     * @param string $event A EventDispatcher Interface
      *
      * @return \Symfony\Component\EventDispatcher\Event A dispached event
      *
