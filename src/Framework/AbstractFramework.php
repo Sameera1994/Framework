@@ -35,7 +35,7 @@ abstract class AbstractFramework implements FrameworkInterface
      */
     const VERSION = '1.7.0';
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Properties.
@@ -48,7 +48,7 @@ abstract class AbstractFramework implements FrameworkInterface
     protected static $instance = null;
     protected static $objectCount = 0;
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Constructor.
@@ -60,7 +60,7 @@ abstract class AbstractFramework implements FrameworkInterface
         static::$objectCount++;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Destructor.
@@ -72,5 +72,5 @@ abstract class AbstractFramework implements FrameworkInterface
         static::$objectCount--;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 }

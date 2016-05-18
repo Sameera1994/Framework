@@ -47,14 +47,14 @@ class RequestEvent extends Event implements RequestEventInterface
      */
     const VERSION = '1.7.0';
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Properties.
      */
     protected $request;
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Constructor.
@@ -65,7 +65,7 @@ class RequestEvent extends Event implements RequestEventInterface
     {
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Set by {@link UCSDMath\Framework\Core\Application} which will triggger when
@@ -76,9 +76,9 @@ class RequestEvent extends Event implements RequestEventInterface
      * This event must have access to the current request, using an attribute
      * holding a Request.
      *
-     * @param Request $request  A Request
+     * @param Request $request A Request
      *
-     * @return RequestEvent Instance
+     * @return RequestEvent The current interface
      *
      * @api
      */
@@ -89,12 +89,12 @@ class RequestEvent extends Event implements RequestEventInterface
         return $this;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Get a stored event.
      *
-     * @return Request Instance
+     * @return Request The current Request interface
      *
      * @api
      */
@@ -103,5 +103,5 @@ class RequestEvent extends Event implements RequestEventInterface
         return $this->request;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 }

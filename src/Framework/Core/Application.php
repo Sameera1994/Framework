@@ -73,7 +73,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      */
     const VERSION = '1.7.0';
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Properties.
@@ -86,7 +86,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
     protected $defaultRoute = null;
     protected $config;
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Constructor.
@@ -105,7 +105,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
         $this->service = ServiceRequestContainer::serve();
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * This method defines the workflow from the HTTP Request and ends with a Response.
@@ -121,7 +121,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @throws \Exception  when an Exception occurs during processing
      * @throws \ResourceNotFoundException  when a specified route is not registered or found
      *
-     * @return \Symfony\Component\HttpFoundation\Response Sending the response back
+     * @return \Symfony\Component\HttpFoundation\Response  The current Response
      *
      * @api
      */
@@ -145,7 +145,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
         return $response;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Send new response if Route is null.
@@ -153,7 +153,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @param string $message A message to send on error
      * @param int    $error   A http error number
      *
-     * @return \Symfony\Component\HttpFoundation\Response Send the response
+     * @return \Symfony\Component\HttpFoundation\Response The current Response
      * @api
      */
     public function errorResponse(string $message, int $error): \Symfony\Component\HttpFoundation\Response
@@ -169,14 +169,14 @@ class Application implements HttpKernelInterface, ApplicationInterface
         return $response;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Sends the redirect (RedirectResponse extends Response).
      *
      * @param string $path A defined URI path
      *
-     * @return \Symfony\Component\HttpFoundation\Response Send the response
+     * @return \Symfony\Component\HttpFoundation\Response The current Response
      * @api
      */
     public function redirectRoute(string $path)
@@ -185,7 +185,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
         $response->send();
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Creating a map method that binds a URI to a PHP callback that will be executed
@@ -197,7 +197,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @param string $path       A defined URI path
      * @param Object $controller A callback function (reference a defined closure)
      *
-     * @return \Symfony\Component\HttpKernel\HttpKernelInterface
+     * @return \Symfony\Component\HttpKernel\HttpKernelInterface The current instance
      *
      * @api
      */
@@ -208,7 +208,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
         return $this;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Set the application default route or location URI (e.g., /sso/1/news-manager/).
@@ -216,7 +216,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @param string $defaultRoute A defined URI path
      *
-     * @return \UCSDMath\Framework\Core\ApplicationInterface
+     * @return \UCSDMath\Framework\Core\ApplicationInterface The current instance
      *
      * @api
      */
@@ -227,7 +227,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
         return $this;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Add event listener to the dispatcher.
@@ -243,7 +243,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * @param string $event    A defined URI path
      * @param Object $callback A callback function (reference a defined closure)
      *
-     * @return \Symfony\Component\HttpKernel\HttpKernelInterface
+     * @return \Symfony\Component\HttpKernel\HttpKernelInterface The current instance
      *
      * @api
      */
@@ -254,7 +254,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
         return $this;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Tell dispatcher to notify all the listeners he knows when some event occurs.
@@ -270,12 +270,12 @@ class Application implements HttpKernelInterface, ApplicationInterface
         return $this->dispatcher->dispatch($event);
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Bootstrap any needed resources for the core application.
      *
-     * @return \UCSDMath\Framework\Core\ApplicationInterface
+     * @return \UCSDMath\Framework\Core\ApplicationInterface The current instance
      *
      * @api
      */
@@ -286,5 +286,5 @@ class Application implements HttpKernelInterface, ApplicationInterface
         return $this;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 }

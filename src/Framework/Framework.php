@@ -59,7 +59,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      */
     const VERSION = '1.7.0';
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Properties.
@@ -68,7 +68,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
     protected $resolver;
     protected $dispatcher;
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Constructor.
@@ -91,7 +91,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
         parent::__construct();
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * This method defines the workflow from the HTTP Request and ends with a Response.
@@ -105,7 +105,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      * @throws \ResourceNotFoundException When a controller not found occurs during processing
      * @throws \Exception When an Exception occurs during processing
      *
-     * @return Response
+     * @return Response The current Response interface
      *
      * @api
      */
@@ -133,5 +133,5 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
         return $response;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 }

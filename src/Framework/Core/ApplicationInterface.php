@@ -28,7 +28,7 @@ interface ApplicationInterface
     const REQUIRED_PHP_VERSION = '7.0.0';
     const DEFAULT_CHARSET = 'UTF-8';
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Set the application default route or location URI (e.g., /sso/1/news-manager/).
@@ -36,13 +36,13 @@ interface ApplicationInterface
      *
      * @param string $defaultRoute  A defined URI path
      *
-     * @return ApplicationInterface
+     * @return ApplicationInterface The current instance
      *
      * @api
      */
     public function setDefaultRoute(string $defaultRoute = null): ApplicationInterface;
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Redirect to a location.
@@ -53,7 +53,7 @@ interface ApplicationInterface
      */
     public function redirectRoute(string $path);
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Creating a map method that binds a URI to a PHP callback that will be executed
@@ -65,13 +65,13 @@ interface ApplicationInterface
      * @param string  $path        A defined URI path
      * @param Object  $controller  A callback function (reference a defined closure)
      *
-     * @return HttpKernelInterface
+     * @return HttpKernelInterface The current instance
      *
      * @api
      */
     public function map(string $path, $controller): HttpKernelInterface;
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Add event listener to the dispatcher.
@@ -87,13 +87,13 @@ interface ApplicationInterface
      * @param EventDispatcher  $event     A defined EventDispatcher Interface
      * @param Object           $callback  A callback function (reference a defined closure)
      *
-     * @return HttpKernelInterface
+     * @return HttpKernelInterface The current instance
      *
      * @api
      */
     public function on($event, $callback): HttpKernelInterface;
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Tell dispatcher to notify all the listeners he knows when some event occurs.
@@ -106,16 +106,16 @@ interface ApplicationInterface
      */
     public function fire($event);
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Bootstrap any needed resources for the core application.
      *
-     * @return ApplicationInterface
+     * @return ApplicationInterface The current instance
      *
      * @api
      */
     public function startupApplication(): ApplicationInterface;
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 }

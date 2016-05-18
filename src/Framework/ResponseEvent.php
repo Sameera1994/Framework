@@ -44,7 +44,7 @@ class ResponseEvent extends Event implements ResponseEventInterface
      */
     const VERSION = '1.7.0';
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Properties.
@@ -52,7 +52,7 @@ class ResponseEvent extends Event implements ResponseEventInterface
     protected $response;
     protected $request;
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Constructor.
@@ -70,12 +70,12 @@ class ResponseEvent extends Event implements ResponseEventInterface
         $this->request = $request;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Get the current response.
      *
-     * @return Response Interface
+     * @return Response The current interface
      *
      * @api
      */
@@ -84,12 +84,12 @@ class ResponseEvent extends Event implements ResponseEventInterface
         return $this->response;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 
     /**
      * Get the current request.
      *
-     * @return Request Interface
+     * @return Request The current interface
      *
      * @api
      */
@@ -98,5 +98,5 @@ class ResponseEvent extends Event implements ResponseEventInterface
         return $this->request;
     }
 
-    // --------------------------------------------------------------------------
+    //--------------------------------------------------------------------------
 }
