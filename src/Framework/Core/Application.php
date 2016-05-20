@@ -174,14 +174,17 @@ class Application implements HttpKernelInterface, ApplicationInterface
     /**
      * Sends the redirect (RedirectResponse extends Response).
      *
-     * @param string $path A defined URI path
+     * @param string $newRoute A defined URI path
+     * @param bool   $trailFix A fix for the trailing slash
      *
      * @return \Symfony\Component\HttpFoundation\Response The current Response
      * @api
      */
-    public function redirectRoute(string $path)
+    public function redirectRoute(string $newRoute, bool $trailFix = false)
     {
-        $response = new RedirectResponse($path);
+        $response = true === $trailFix
+            ? new RedirectResponse(rtrim($newRoute, '/\\').'/')
+            : new RedirectResponse($newRoute);
         $response->send();
     }
 
