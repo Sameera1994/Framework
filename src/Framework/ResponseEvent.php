@@ -38,7 +38,7 @@ class ResponseEvent extends Event implements ResponseEventInterface
     /**
      * Constants.
      *
-     * @var string VERSION  A version number
+     * @var string VERSION A version number
      *
      * @api
      */

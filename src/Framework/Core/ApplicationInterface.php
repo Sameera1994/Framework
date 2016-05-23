@@ -16,9 +16,13 @@ namespace UCSDMath\Framework\Core;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
- * ApplicationInterface is the interface implemented by all {@link UCSDMath\Framework\Core\Application} classes.
+ * ApplicationInterface is the interface implemented by all Framework classes.
+ *
+ * Method noted as: (+) @api.
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
+ *
+ * @api
  */
 interface ApplicationInterface
 {

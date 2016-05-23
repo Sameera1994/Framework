@@ -41,7 +41,7 @@ class RequestEvent extends Event implements RequestEventInterface
     /**
      * Constants.
      *
-     * @var string VERSION  A version number
+     * @var string VERSION A version number
      *
      * @api
      */

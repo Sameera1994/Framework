@@ -53,7 +53,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
     /**
      * Constants.
      *
-     * @var string VERSION  A version number
+     * @var string VERSION A version number
      *
      * @api
      */

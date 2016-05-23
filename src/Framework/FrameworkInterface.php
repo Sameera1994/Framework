@@ -16,7 +16,11 @@ namespace UCSDMath\Framework;
 /**
  * FrameworkInterface is the interface implemented by all Framework classes.
  *
+ * Method noted as: (+) @api.
+ *
  * @author Daryl Eisner <deisner@ucsd.edu>
+ *
+ * @api
  */
 interface FrameworkInterface
 {

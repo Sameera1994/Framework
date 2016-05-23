@@ -14,9 +14,13 @@ declare(strict_types=1);
 namespace UCSDMath\Framework\Listener;
 
 /**
- * ControllerListenerInterface is the interface implemented by all ControllerListener classes.
+ * ControllerListenerInterface is the interface implemented by all Framework classes.
+ *
+ * Method noted as: (+) @api.
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
+ *
+ * @api
  */
 interface ControllerListenerInterface
 {

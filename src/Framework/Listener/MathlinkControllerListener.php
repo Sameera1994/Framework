@@ -34,7 +34,7 @@ class MathlinkControllerListener implements FrameworkInterface
     /**
      * Constants.
      *
-     * @var string VERSION  A version number
+     * @var string VERSION A version number
      *
      * @api
      */
