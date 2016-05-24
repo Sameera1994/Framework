@@ -18,16 +18,18 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
  * MathlinkControllerListener is the default implementation of {@link FrameworkInterface} which
- * provides routine framework methods that are commonly used throughout the framework.
- * MathlinkControllerListener checks events dispatched.
+ * provides routine Listener methods that are commonly used in the framework.
+ *
+ * {@link FilterControllerEvent} is basically a wrapper for Symfony's HttpKernel Event which
+ * this class extends.
  *
  * Method list: (+) @api, (-) protected or private visibility.
  *
- * (+) onCoreController(FilterControllerEvent $event);
+ * (+) OmnilockInterface __construct();
+ * (+) void __destruct();
+ * (+) void onCoreController(FilterControllerEvent $event);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
- *
- * @api
  */
 class MathlinkControllerListener implements FrameworkInterface
 {

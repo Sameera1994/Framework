@@ -19,19 +19,21 @@ use Symfony\Component\HttpFoundation\Response;
 
 /**
  * ResponseEvent is the default implementation of {@link ResponseEventInterface} which
- * provides routine framework methods that are commonly used throughout the framework.
+ * provides routine Framework methods that are commonly used in the framework.
  *
- * Each time the framework handles a Request, a ResponseEvent event is now dispatched
+ * Each time the framework handles a Request, a ResponseEvent event is now dispatched.
+ *
+ * {@link Event} is basically a adapter for the Symfony EventDispatcher Component
+ * which this class extends.
  *
  * Method list: (+) @api, (-) protected or private visibility.
  *
- * (+) __construct();
- * (+) getResponse();
- * (+) getRequest();
+ * (+) PdfInterface __construct();
+ * (+) void __destruct();
+ * (+) Response getResponse();
+ * (+) Request getRequest();
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
- *
- * @api
  */
 class ResponseEvent extends Event implements ResponseEventInterface
 {
@@ -57,8 +59,8 @@ class ResponseEvent extends Event implements ResponseEventInterface
     /**
      * Constructor.
      *
-     * @param Response  $response  A Response
-     * @param Request   $request   A Request
+     * @param Response $response A Response
+     * @param Request  $request  A Request
      *
      * @api
      */

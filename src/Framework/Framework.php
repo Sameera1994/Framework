@@ -22,8 +22,11 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 
 /**
- * Framework is the default implementation of {@link FrameworkInterface} which
- * provides routine framework methods that are commonly used throughout the framework.
+ * Framework is the default implementation of {@link HttpKernelInterface} which
+ * provides routine Framework methods that are commonly used in the framework.
+ *
+ * {@link AbstractFramework} is basically a adapter class for Symfony
+ * HttpKernel Component which this class extends.
  *
  * Framework provides a event dispatch structured process for listening
  * to (HTTP) Request. Much like the standard like WSGI in Python or Rack in Ruby.
@@ -41,12 +44,11 @@ use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
  *
  * Method list: (+) @api, (-) protected or private visibility.
  *
- * (+) __construct();
- * (+) handle();
+ * (+) HttpKernelInterface __construct();
+ * (+) void __destruct();
+ * (+) Response handle(Request $request, int $type = HttpKernelInterface::MASTER_REQUEST, bool $catch = true);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
- *
- * @api
  */
 class Framework extends AbstractFramework implements HttpKernelInterface, FrameworkInterface
 {

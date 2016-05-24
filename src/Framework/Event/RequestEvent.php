@@ -17,24 +17,22 @@ use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * RequestEvent is the default implementation of {@link Symfony\Component\EventDispatcher\Event}
- * which provides the base class for classes containing event data. It is used by events
- * that do not pass state information to an event handler when an event is raised.
+ * RequestEvent is the default implementation of {@link RequestEventInterface} which
+ * provides routine Framework methods that are commonly used in the framework.
  *
- * {@link UCSDMath\Framework\Core\Application} uses hooks to register events that get
- * triggered through the dispacher. This is used as an extension to the Symfony
- * {@link Symfony\Component\EventDispatcher\Event}.
+ * Each time the framework handles a Request, a ResponseEvent event is now dispatched.
+ *
+ * {@link Event} is basically a adapter for the Symfony EventDispatcher Component
+ * which this class extends.
  *
  * Method list: (+) @api, (-) protected or private visibility.
  *
  * (+) RequestEventInterface __construct();
  * (+) void __destruct();
- * (+) RequestEventInterface getRequest();
- * (+) RequestEventInterface setRequest(Request $request);
+ * (+) RequestEvent setRequest(Request $request);
+ * (+) Request getRequest();
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
- *
- * @api
  */
 class RequestEvent extends Event implements RequestEventInterface
 {

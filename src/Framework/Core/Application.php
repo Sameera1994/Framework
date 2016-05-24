@@ -29,8 +29,11 @@ use UCSDMath\Framework\Event\RequestEvent;
 use UCSDMath\Framework\Framework;
 
 /**
- * Application is the default implementation of {@link HttpKernelInterface} which
- * provides a structured process for converting a (HTTP) Request into a Response.
+ * Application is the default implementation of {@link ApplicationInterface} which
+ * provides routine Yaml methods that are commonly used in the framework.
+ *
+ * {@link HttpKernelInterface} is basically a adapter class for Symfony
+ * HttpKernel Component which this class extends.
  *
  * Routing is set in the Front Controller through a defined closure. There is
  * an option to set url parameters from a controller if it makes sense
@@ -50,17 +53,18 @@ use UCSDMath\Framework\Framework;
  *
  * Method list: (+) @api, (-) protected or private visibility.
  *
- * (+) HttpKernelInterface __construct(RouteCollection $routes, EventDispatcher $dispatcher);
+ * (+) ApplicationInterface __construct();
  * (+) void __destruct();
- * (+) handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true);
- * (+) setDefaultRoute($defaultRoute);
- * (+) map($path, $controller);
- * (+) on($event, $callback);
- * (+) fire($event);
+ * (+) Event fire($event);
+ * (+) ApplicationInterface startupApplication();
+ * (+) HttpKernelInterface on($event, $callback);
+ * (+) HttpKernelInterface map(string $path, $controller);
+ * (+) Response errorResponse(string $message, int $error);
+ * (+) void redirectRoute(string $newRoute, bool $trailFix = false);
+ * (+) ApplicationInterface setDefaultRoute(string $defaultRoute = null);
+ * (+) Response handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
- *
- * @api
  */
 class Application implements HttpKernelInterface, ApplicationInterface
 {
