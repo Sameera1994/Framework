@@ -15,7 +15,7 @@ namespace UCSDMath\Framework;
 
 /**
  * AbstractFramework provides an abstract base class implementation of {@link FrameworkInterface}.
- * Primarily, this services the fundamental implementations for all Framework classes.
+ * This service groups a common code base implementation that Framework extends.
  *
  * Method list: (+) @api, (-) protected or private visibility.
  *
