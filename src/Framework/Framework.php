@@ -118,7 +118,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
         try {
             $request->attributes->add($this->matcher->match($request->getPathInfo()));
             $controller = $this->resolver->getController($request);
-            'boolean' === gettype($controller) ? $this->throwControllerResolverExceptionError():;
+            'boolean' === gettype($controller) ? $this->throwControllerResolverExceptionError(): null;
             $arguments = $this->resolver->getArguments($request, $controller);
             $response = call_user_func_array($controller, $arguments);
         } catch (ResourceNotFoundException $e) {
