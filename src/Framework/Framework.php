@@ -141,7 +141,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      */
     protected function throwControllerResolverExceptionError(): \Exception
     {
-        throw new Exception("The controller can not be resolved for the application. Please check that it exists");
+        throw new Exception("The controller can not be resolved for the application. Please check that it exists.");
     }
 
     //--------------------------------------------------------------------------

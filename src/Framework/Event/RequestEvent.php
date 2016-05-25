@@ -15,6 +15,7 @@ namespace UCSDMath\Framework\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * RequestEvent is the default implementation of {@link RequestEventInterface} which
@@ -74,15 +75,15 @@ class RequestEvent extends Event implements RequestEventInterface
      * This event must have access to the current request, using an attribute
      * holding a Request.
      *
-     * @param Request $request A Request
+     * @param RequestStack $requestStack A RequestStack
      *
      * @return RequestEvent The current interface
      *
      * @api
      */
-    public function setRequest(Request $request): RequestEvent
+    public function setRequest(RequestStack $requestStack): RequestEvent
     {
-        $this->request = $request;
+        $this->request = $requestStack->getCurrentRequest();
 
         return $this;
     }
