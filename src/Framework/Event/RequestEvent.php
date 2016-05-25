@@ -15,7 +15,6 @@ namespace UCSDMath\Framework\Event;
 
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\RequestStack;
 
 /**
  * RequestEvent is the default implementation of {@link RequestEventInterface} which
@@ -81,7 +80,7 @@ class RequestEvent extends Event implements RequestEventInterface
      *
      * @api
      */
-    public function setRequest(Symfony\Component\HttpFoundation\Request $request): RequestEvent
+    public function setRequest(Request $request): RequestEvent
     {
         $this->request = $request;
 
