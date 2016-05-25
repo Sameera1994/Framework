@@ -75,15 +75,15 @@ class RequestEvent extends Event implements RequestEventInterface
      * This event must have access to the current request, using an attribute
      * holding a Request.
      *
-     * @param RequestStack $requestStack A RequestStack
+     * @param Request $request A Request
      *
      * @return RequestEvent The current interface
      *
      * @api
      */
-    public function setRequest(RequestStack $requestStack): RequestEvent
+    public function setRequest(Symfony\Component\HttpFoundation\Request $request): RequestEvent
     {
-        $this->request = $requestStack->getCurrentRequest();
+        $this->request = $request;
 
         return $this;
     }
