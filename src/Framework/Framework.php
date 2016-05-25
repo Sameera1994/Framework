@@ -47,6 +47,7 @@ use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
  * (+) HttpKernelInterface __construct();
  * (+) void __destruct();
  * (+) Response handle(Request $request, int $type = HttpKernelInterface::MASTER_REQUEST, bool $catch = true);
+ * (-) \Exception throwControllerResolverExceptionError();
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  */
@@ -114,25 +115,33 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
     public function handle(Request $request, int $type = HttpKernelInterface::MASTER_REQUEST, bool $catch = true): Response
     {
         $this->matcher->getContext()->fromRequest($request);
-
         try {
             $request->attributes->add($this->matcher->match($request->getPathInfo()));
             $controller = $this->resolver->getController($request);
+            'boolean' === gettype($controller) ? $this->throwControllerResolverExceptionError():;
             $arguments = $this->resolver->getArguments($request, $controller);
             $response = call_user_func_array($controller, $arguments);
-
         } catch (ResourceNotFoundException $e) {
             $response = new Response('Not Found', 404);
-
         } catch (\Exception $e) {
             $response = new Response('An error occurred', 500);
-
         }
-
         /* Dispatch a response event */
         $this->dispatcher->dispatch('response', new ResponseEvent($response, $request));
 
         return $response;
+    }
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * Notify that the controller specified does not exist.
+     *
+     * @return \Exception The current warning
+     */
+    protected function throwControllerResolverExceptionError(): \Exception
+    {
+        throw new Exception("The controller can not be resolved for the application. Please check that it exists");
     }
 
     //--------------------------------------------------------------------------
