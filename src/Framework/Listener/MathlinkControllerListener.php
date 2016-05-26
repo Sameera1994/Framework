@@ -46,18 +46,50 @@ class MathlinkControllerListener implements FrameworkInterface
 
     /**
      * Properties.
+     *
+     * @var    FilterControllerEvent $controller      A event controller
+     * @static FrameworkInterface    $instance        A static instance FilterControllerEvent
+     * @static int                   $objectCount     A static count of FilterControllerEvent
+     * @var    array                 $storageRegister A stored set of data structures used by this class
      */
-    protected $controller;
+    protected $controller         = null;;
+    protected static $instance    = null;
+    protected static $objectCount = 0;
+    protected $storageRegister    = [];
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * Constructor.
+     *
+     * @api
+     */
+    public function __construct()
+    {
+        static::$instance = $this;
+        static::$objectCount++;
+    }
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * Destructor.
+     *
+     * @api
+     */
+    public function __destruct()
+    {
+        static::$objectCount--;
+    }
 
     //--------------------------------------------------------------------------
 
     /**
      * Check event status.
-     *
      *   - HttpKernelInterface::MASTER_REQUEST === 1
      *   - HttpKernelInterface::SUB_REQUEST === 2
      *
-     * @param FilterControllerEvent  $event A FilterControllerEvent
+     * @param FilterControllerEvent $event A FilterControllerEvent
      *
      * @api
      */

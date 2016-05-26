@@ -61,6 +61,19 @@ class RequestEvent extends Event implements RequestEventInterface
      */
     public function __construct()
     {
+
+    }
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * Destructor.
+     *
+     * @api
+     */
+    public function __destruct()
+    {
+
     }
 
     //--------------------------------------------------------------------------

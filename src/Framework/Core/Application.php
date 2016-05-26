@@ -112,6 +112,18 @@ class Application implements HttpKernelInterface, ApplicationInterface
     //--------------------------------------------------------------------------
 
     /**
+     * Destructor.
+     *
+     * @api
+     */
+    public function __destruct()
+    {
+
+    }
+
+    //--------------------------------------------------------------------------
+
+    /**
      * This method defines the workflow from the HTTP Request and ends with a Response.
      * HttpKernel allows us to use event listeners and does the work by dispatching those events.
      * Basically we are creating an EventDispatcher and a controller resolver in this handle method.

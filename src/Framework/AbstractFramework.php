@@ -40,13 +40,13 @@ abstract class AbstractFramework implements FrameworkInterface
     /**
      * Properties.
      *
-     * @var    array              $storageRegister  A set of validation stored data elements
-     * @static FrameworkInterface $instance         A FrameworkInterface
-     * @static int                $objectCount      A FrameworkInterface count
+     * @static FrameworkInterface $instance        A static instance FrameworkInterface
+     * @static int                $objectCount     A static count of FrameworkInterface
+     * @var    array              $storageRegister A stored set of data structures used by this class
      */
-    protected $storageRegister = array();
-    protected static $instance = null;
+    protected static $instance    = null;
     protected static $objectCount = 0;
+    protected $storageRegister    = [];
 
     //--------------------------------------------------------------------------
 
@@ -57,6 +57,7 @@ abstract class AbstractFramework implements FrameworkInterface
      */
     public function __construct()
     {
+        static::$instance = $this;
         static::$objectCount++;
     }
 

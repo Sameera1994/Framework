@@ -64,12 +64,22 @@ class ResponseEvent extends Event implements ResponseEventInterface
      *
      * @api
      */
-    public function __construct(
-        Response $response,
-        Request $request
-    ) {
+    public function __construct(Response $response, Request $request)
+    {
         $this->response = $response;
         $this->request = $request;
+    }
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * Destructor.
+     *
+     * @api
+     */
+    public function __destruct()
+    {
+
     }
 
     //--------------------------------------------------------------------------

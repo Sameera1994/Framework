@@ -66,6 +66,10 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
 
     /**
      * Properties.
+     *
+     * @var EventDispatcher             $dispatcher A EventDispatcher
+     * @var UrlMatcherInterface         $matcher    A UrlMatcherInterface
+     * @var ControllerResolverInterface $resolver   A ControllerResolverInterface
      */
     protected $matcher;
     protected $resolver;
@@ -82,16 +86,24 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      *
      * @api
      */
-    public function __construct(
-        EventDispatcher $dispatcher,
-        UrlMatcherInterface $matcher,
-        ControllerResolverInterface $resolver
-    ) {
+    public function __construct(EventDispatcher $dispatcher, UrlMatcherInterface $matcher, ControllerResolverInterface $resolver)
+    {
         $this->matcher = $matcher;
         $this->resolver = $resolver;
         $this->dispatcher = $dispatcher;
-
         parent::__construct();
+    }
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * Destructor.
+     *
+     * @api
+     */
+    public function __destruct()
+    {
+        parent::__destruct();
     }
 
     //--------------------------------------------------------------------------
