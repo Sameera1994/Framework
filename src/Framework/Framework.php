@@ -13,13 +13,13 @@ declare(strict_types=1);
 
 namespace UCSDMath\Framework;
 
-use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
-use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\HttpKernel\Controller\ControllerResolverInterface;
 
 /**
  * Framework is the default implementation of {@link HttpKernelInterface} which
@@ -86,8 +86,11 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      *
      * @api
      */
-    public function __construct(EventDispatcher $dispatcher, UrlMatcherInterface $matcher, ControllerResolverInterface $resolver)
-    {
+    public function __construct(
+        EventDispatcher $dispatcher,
+        UrlMatcherInterface $matcher,
+        ControllerResolverInterface $resolver
+    ) {
         $this->matcher = $matcher;
         $this->resolver = $resolver;
         $this->dispatcher = $dispatcher;

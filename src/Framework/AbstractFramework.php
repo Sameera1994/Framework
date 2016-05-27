@@ -44,7 +44,7 @@ abstract class AbstractFramework implements FrameworkInterface
      * @static int                $objectCount     A static count of FrameworkInterface
      * @var    array              $storageRegister A stored set of data structures used by this class
      */
-    protected static $instance    = null;
+    protected static $instance;
     protected static $objectCount = 0;
     protected $storageRegister    = [];
 

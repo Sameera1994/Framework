@@ -52,8 +52,8 @@ class MathlinkControllerListener implements FrameworkInterface
      * @static int                   $objectCount     A static count of FilterControllerEvent
      * @var    array                 $storageRegister A stored set of data structures used by this class
      */
-    protected $controller         = null;;
-    protected static $instance    = null;
+    protected $controller;
+    protected static $instance;
     protected static $objectCount = 0;
     protected $storageRegister    = [];
 
