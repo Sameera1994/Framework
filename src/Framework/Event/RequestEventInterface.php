@@ -16,7 +16,7 @@ namespace UCSDMath\Framework\Event;
 /**
  * RequestEventInterface is the interface implemented by all Framework\Event classes.
  *
- * Method noted as: (+) @api.
+ * Method list: (+) @api.
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *

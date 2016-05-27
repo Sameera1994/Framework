@@ -18,7 +18,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 /**
  * ApplicationInterface is the interface implemented by all Framework classes.
  *
- * Method noted as: (+) @api.
+ * Method list: (+) @api.
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *
