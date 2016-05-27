@@ -14,6 +14,7 @@ declare(strict_types=1);
 namespace UCSDMath\Framework\Listener;
 
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
+use Symfony\Component\HttpKernel\Event\KernelEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
@@ -89,11 +90,11 @@ class MathlinkControllerListener implements FrameworkInterface
      *   - HttpKernelInterface::MASTER_REQUEST === 1
      *   - HttpKernelInterface::SUB_REQUEST === 2
      *
-     * @param FilterControllerEvent $event A FilterControllerEvent
+     * @param KernelEvent $event A KernelEvent
      *
      * @api
      */
-    public function onCoreController(FilterControllerEvent $event)
+    public function onCoreController(Symfony\Component\HttpKernel\Event\KernelEvent $event)
     {
         if (HttpKernelInterface::MASTER_REQUEST === $event->getRequestType()) {
             $this->controller = $event->getController();
