@@ -116,7 +116,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      * HttpKernel allows us to use event listeners and does the work by dispatching those events.
      * Basically we are creating an EventDispatcher and a controller resolver in this handle method.
      *
-     * @param Request $request  A Request
+     * @param Request $request  A Request instance
      * @param int     $type     A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
      * @param bool    $catch    A option to catch exceptions or not
      *

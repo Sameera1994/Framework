@@ -130,7 +130,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * {@link http://symfony.com/doc/current/components/event_dispatcher/introduction.html#usage}
      *
-     * @param Request $request A Request Interface
+     * @param Request $request A Request instance
      * @param int     $type    A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
      * @param bool    $catch   A option to catch exceptions or not
      *
