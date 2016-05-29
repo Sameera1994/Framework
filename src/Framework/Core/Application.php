@@ -106,7 +106,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
     ) {
         $this->routes = $routes;
         $this->dispatcher = $dispatcher;
-        $this->service = ServiceRequestContainer::serve();
+        $this->service = ServiceRequestContainer::serviceConnect();
     }
 
     //--------------------------------------------------------------------------
