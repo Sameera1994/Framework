@@ -14,10 +14,10 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "symfony/routing": "3.0.6",
-        "symfony/http-kernel": "3.0.6",
-        "symfony/http-foundation": "3.0.6",
-        "symfony/event-dispatcher": "3.0.6",
+        "symfony/routing": "3.1.0",
+        "symfony/http-kernel": "3.1.0",
+        "symfony/http-foundation": "3.1.0",
+        "symfony/event-dispatcher": "3.1.0",
         "ucsdmath/functions": "1.7.x-dev",
         "ucsdmath/configuration": "1.7.x-dev",
         "ucsdmath/dependency-injection": "1.7.x-dev"
@@ -26,7 +26,7 @@
         "mockery/mockery": "0.9.5",
         "phpunit/phpunit": "5.3.4",
         "ucsdmath/testing": "1.7.x-dev",
-        "squizlabs/php_codesniffer": "2.6.0"
+        "squizlabs/php_codesniffer": "2.6.1"
     },
     "autoload": {
         "psr-4": {
