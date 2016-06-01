@@ -69,9 +69,9 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
     /**
      * Properties.
      *
-     * @var EventDispatcher           $dispatcher A EventDispatcher
-     * @var UrlMatcherInterface       $matcher    A UrlMatcherInterface
-     * @var ArgumentResolverInterface $resolver   A ArgumentResolverInterface
+     * @var EventDispatcher  $dispatcher A EventDispatcher
+     * @var UrlMatcher       $matcher    A UrlMatcher
+     * @var ArgumentResolver $resolver   A ArgumentResolver
      */
     protected $matcher;
     protected $resolver;
@@ -82,9 +82,9 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
     /**
      * Constructor.
      *
-     * @param EventDispatcher           $dispatcher A EventDispatcher
-     * @param UrlMatcherInterface       $matcher    A UrlMatcherInterface
-     * @param ArgumentResolverInterface $resolver   A ArgumentResolverInterface
+     * @param EventDispatcher  $dispatcher A EventDispatcher
+     * @param UrlMatcher       $matcher    A UrlMatcherInterface
+     * @param ArgumentResolver $resolver   A ArgumentResolverInterface
      *
      * @api
      */
@@ -118,9 +118,9 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      * HttpKernel allows us to use event listeners and does the work by dispatching those events.
      * Basically we are creating an EventDispatcher and a controller resolver in this handle method.
      *
-     * @param Request $request  A Request instance
-     * @param int     $type     A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
-     * @param bool    $catch    A option to catch exceptions or not
+     * @param Request $request A Request instance
+     * @param int     $type    A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
+     * @param bool    $catch   A option to catch exceptions or not
      *
      * @throws \ResourceNotFoundException When a controller not found occurs during processing
      * @throws \Exception When an Exception occurs during processing
