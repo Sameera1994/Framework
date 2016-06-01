@@ -20,6 +20,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
 
 /**
@@ -89,8 +90,8 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      */
     public function __construct(
         EventDispatcher $dispatcher,
-        UrlMatcherInterface $matcher,
-        ArgumentResolverInterface $resolver
+        UrlMatcher $matcher,
+        ArgumentResolver $resolver
     ) {
         $this->matcher = $matcher;
         $this->resolver = $resolver;
