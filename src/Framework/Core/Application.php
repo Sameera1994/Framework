@@ -53,16 +53,16 @@ use UCSDMath\Framework\Framework;
  *
  * Method list: (+) @api, (-) protected or private visibility.
  *
- * (+) ApplicationInterface __construct();
+ * (+) Symfony\Component\HttpKernel\HttpKernelInterface __construct($routes, $dispatcher);
  * (+) void __destruct();
- * (+) Event fire($event);
- * (+) ApplicationInterface startupApplication();
- * (+) HttpKernelInterface on($event, $callback);
- * (+) HttpKernelInterface map(string $path, $controller);
- * (+) Response errorResponse(string $message, int $error);
+ * (+) Symfony\Component\EventDispatcher\Event fire($event);
  * (+) void redirectRoute(string $newRoute, bool $trailFix = false);
- * (+) ApplicationInterface setDefaultRoute(string $defaultRoute = null);
- * (+) Response handle(Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true);
+ * (+) UCSDMath\Framework\Core\ApplicationInterface startupApplication();
+ * (+) Symfony\Component\HttpKernel\HttpKernelInterface on($event, $callback);
+ * (+) Symfony\Component\HttpKernel\HttpKernelInterface map(string $path, $controller);
+ * (+) Symfony\Component\HttpFoundation\Response errorResponse(string $message, int $error);
+ * (+) UCSDMath\Framework\Core\ApplicationInterface setDefaultRoute(string $defaultRoute = null);
+ * (+) Symfony\Component\HttpFoundation\Response handle(\Symfony\Component\HttpFoundation\Request $request, $type = HttpKernelInterface::MASTER_REQUEST, $catch = true);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  */

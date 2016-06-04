@@ -18,7 +18,7 @@ use Symfony\Component\HttpKernel\Event\KernelEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 
 /**
- * MathlinkControllerListener is the default implementation of {@link FrameworkInterface} which
+ * MathlinkControllerListener is the default implementation of {@link ControllerListenerInterface} which
  * provides routine Listener methods that are commonly used in the framework.
  *
  * {@link FilterControllerEvent} is basically a wrapper for Symfony's HttpKernel Event which
@@ -32,7 +32,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  */
-class MathlinkControllerListener implements FrameworkInterface
+class MathlinkControllerListener implements ControllerListenerInterface
 {
     /**
      * Constants.
@@ -85,10 +85,13 @@ class MathlinkControllerListener implements FrameworkInterface
 
     /**
      * Check event status.
+     *
      *   - HttpKernelInterface::MASTER_REQUEST === 1
      *   - HttpKernelInterface::SUB_REQUEST === 2
      *
      * @param KernelEvent $event A KernelEvent
+     *
+     * @return void
      *
      * @api
      */

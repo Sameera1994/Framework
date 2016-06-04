@@ -11,24 +11,24 @@
 
 declare(strict_types=1);
 
-namespace UCSDMath\Framework\Event;
+namespace UCSDMath\Framework;
 
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * RequestEventInterface is the interface implemented by all Framework\Event classes.
+ * ResponseEventInterface is the interface implemented by all Framework\Event classes.
  *
  * Method list: (+) @api.
  *
+ * (+) Response getResponse();
  * (+) Request getRequest();
- * (+) RequestEvent setRequest(Request $request);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *
  * @api
  */
-interface RequestEventInterface
+interface ResponseEventInterface
 {
     /**
      * Constants.
@@ -39,28 +39,20 @@ interface RequestEventInterface
     //--------------------------------------------------------------------------
 
     /**
-     * Set by {@link UCSDMath\Framework\Core\Application} which will triggger when
-     * a request is handled by the framework.  The dispatch method takes a second argument,
-     * which is the dispatched event object. Every event inherits from the generic Event class,
-     * and is used to hold any information related to it.
+     * Get the current response.
      *
-     * This event must have access to the current request, using an attribute
-     * holding a Request.
-     *
-     * @param Request $request A Request instance
-     *
-     * @return RequestEvent The current interface
+     * @return Response The current interface
      *
      * @api
      */
-    public function setRequest(Request $request): RequestEvent;
+    public function getResponse();
 
     //--------------------------------------------------------------------------
 
     /**
-     * Get a stored event.
+     * Get the current request.
      *
-     * @return Request A current Request instance
+     * @return Request The current interface
      *
      * @api
      */

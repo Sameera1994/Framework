@@ -20,6 +20,14 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  *
  * Method list: (+) @api.
  *
+ * (+) Symfony\Component\EventDispatcher\Event fire($event);
+ * (+) void redirectRoute(string $newRoute, bool $trailFix = false);
+ * (+) UCSDMath\Framework\Core\ApplicationInterface startupApplication();
+ * (+) Symfony\Component\HttpKernel\HttpKernelInterface on($event, $callback);
+ * (+) Symfony\Component\HttpKernel\HttpKernelInterface map(string $path, $controller);
+ * (+) Symfony\Component\HttpFoundation\Response errorResponse(string $message, int $error);
+ * (+) UCSDMath\Framework\Core\ApplicationInterface setDefaultRoute(string $defaultRoute = null);
+ *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *
  * @api

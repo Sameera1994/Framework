@@ -18,6 +18,8 @@ namespace UCSDMath\Framework\Listener;
  *
  * Method list: (+) @api.
  *
+ * (+) void onCoreController(FilterControllerEvent $event);
+ *
  * @author Daryl Eisner <deisner@ucsd.edu>
  *
  * @api
@@ -27,6 +29,22 @@ interface ControllerListenerInterface
     /**
      * Constants.
      */
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * Check event status.
+     *
+     *   - HttpKernelInterface::MASTER_REQUEST === 1
+     *   - HttpKernelInterface::SUB_REQUEST === 2
+     *
+     * @param KernelEvent $event A KernelEvent
+     *
+     * @return void
+     *
+     * @api
+     */
+    public function onCoreController(Symfony\Component\HttpKernel\Event\KernelEvent $event);
 
     //--------------------------------------------------------------------------
 }
