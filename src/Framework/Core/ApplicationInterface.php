@@ -36,9 +36,12 @@ interface ApplicationInterface
 {
     /**
      * Constants.
+     *
+     * @var string REQUIRED_PHP_VERSION The minimum PHP version
+     * @var string DEFAULT_CHARSET      The preferred character set
      */
     const REQUIRED_PHP_VERSION = '7.0.0';
-    const DEFAULT_CHARSET = 'UTF-8';
+    const DEFAULT_CHARSET      = 'UTF-8';
 
     //--------------------------------------------------------------------------
 
