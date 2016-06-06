@@ -37,7 +37,7 @@ class MathlinkControllerListener implements ControllerListenerInterface
     /**
      * Constants.
      *
-     * @var string VERSION A version number
+     * @var string VERSION The version number
      *
      * @api
      */
@@ -48,10 +48,10 @@ class MathlinkControllerListener implements ControllerListenerInterface
     /**
      * Properties.
      *
-     * @var    FilterControllerEvent $controller      A event controller
-     * @static FrameworkInterface    $instance        A static instance FilterControllerEvent
-     * @static int                   $objectCount     A static count of FilterControllerEvent
-     * @var    array                 $storageRegister A stored set of data structures used by this class
+     * @var    FilterControllerEvent $controller      The event controller
+     * @static FrameworkInterface    $instance        The static instance FilterControllerEvent
+     * @static int                   $objectCount     The static count of FilterControllerEvent
+     * @var    array                 $storageRegister The stored set of data structures used by this class
      */
     protected $controller;
     protected static $instance;
@@ -89,7 +89,7 @@ class MathlinkControllerListener implements ControllerListenerInterface
      *   - HttpKernelInterface::MASTER_REQUEST === 1
      *   - HttpKernelInterface::SUB_REQUEST === 2
      *
-     * @param KernelEvent $event A KernelEvent
+     * @param KernelEvent $event The KernelEvent
      *
      * @return void
      *

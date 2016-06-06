@@ -46,7 +46,7 @@ interface ApplicationInterface
      * Set the application default route or location URI (e.g., /sso/1/news-manager/).
      * If any problem with mapping URL Routing, we default to this location.
      *
-     * @param string $defaultRoute  A defined URI path
+     * @param string $defaultRoute The defined URI path
      *
      * @return ApplicationInterface The current instance
      *
@@ -59,7 +59,7 @@ interface ApplicationInterface
     /**
      * Redirect to a location.
      *
-     * @param string  $path  A defined URI path
+     * @param string $path The defined URI path
      *
      * @api
      */
@@ -74,8 +74,8 @@ interface ApplicationInterface
      *
      * Associates an URI or URL with a callback function.
      *
-     * @param string  $path        A defined URI path
-     * @param Object  $controller  A callback function (reference a defined closure)
+     * @param string $path       The defined URI path
+     * @param Object $controller The callback function (reference a defined closure)
      *
      * @return HttpKernelInterface The current instance
      *
@@ -96,8 +96,8 @@ interface ApplicationInterface
      *
      * @see http://en.wikipedia.org/wiki/Observer_pattern
      *
-     * @param EventDispatcher  $event     A defined EventDispatcher Interface
-     * @param Object           $callback  A callback function (reference a defined closure)
+     * @param EventDispatcher $event    The defined EventDispatcher Interface
+     * @param Object          $callback The callback function (reference a defined closure)
      *
      * @return HttpKernelInterface The current instance
      *
@@ -110,9 +110,9 @@ interface ApplicationInterface
     /**
      * Tell dispatcher to notify all the listeners he knows when some event occurs.
      *
-     * @param EventDispatcher  $event   A EventDispatcher Interface
+     * @param EventDispatcher $event The EventDispatcher Interface
      *
-     * @return A dispached event
+     * @return The dispached event
      *
      * @api
      */

@@ -38,7 +38,7 @@ interface ControllerListenerInterface
      *   - HttpKernelInterface::MASTER_REQUEST === 1
      *   - HttpKernelInterface::SUB_REQUEST === 2
      *
-     * @param KernelEvent $event A KernelEvent
+     * @param KernelEvent $event The KernelEvent
      *
      * @return void
      *

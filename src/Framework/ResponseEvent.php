@@ -40,7 +40,7 @@ class ResponseEvent extends Event implements ResponseEventInterface
     /**
      * Constants.
      *
-     * @var string VERSION A version number
+     * @var string VERSION The version number
      *
      * @api
      */
@@ -59,8 +59,8 @@ class ResponseEvent extends Event implements ResponseEventInterface
     /**
      * Constructor.
      *
-     * @param Response $response A Response instance
-     * @param Request  $request  A Request instance
+     * @param Response $response The Response instance
+     * @param Request  $request  The Request instance
      *
      * @api
      */

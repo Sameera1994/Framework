@@ -58,7 +58,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
     /**
      * Constants.
      *
-     * @var string VERSION A version number
+     * @var string VERSION The version number
      *
      * @api
      */
@@ -69,9 +69,9 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
     /**
      * Properties.
      *
-     * @var EventDispatcher  $dispatcher A EventDispatcher
-     * @var UrlMatcher       $matcher    A UrlMatcher
-     * @var ArgumentResolver $resolver   A ArgumentResolver
+     * @var EventDispatcher  $dispatcher The EventDispatcher
+     * @var UrlMatcher       $matcher    The UrlMatcher
+     * @var ArgumentResolver $resolver   The ArgumentResolver
      */
     protected $matcher;
     protected $resolver;
@@ -82,9 +82,9 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
     /**
      * Constructor.
      *
-     * @param EventDispatcher  $dispatcher A EventDispatcher
-     * @param UrlMatcher       $matcher    A UrlMatcherInterface
-     * @param ArgumentResolver $resolver   A ArgumentResolverInterface
+     * @param EventDispatcher  $dispatcher The EventDispatcher
+     * @param UrlMatcher       $matcher    The UrlMatcherInterface
+     * @param ArgumentResolver $resolver   The ArgumentResolverInterface
      *
      * @api
      */
@@ -118,9 +118,9 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      * HttpKernel allows us to use event listeners and does the work by dispatching those events.
      * Basically we are creating an EventDispatcher and a controller resolver in this handle method.
      *
-     * @param Request $request A Request instance
-     * @param int     $type    A default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
-     * @param bool    $catch   A option to catch exceptions or not
+     * @param Request $request The Request instance
+     * @param int     $type    The default type request [MASTER_REQUEST = 1, SUB_REQUEST = 2]
+     * @param bool    $catch   The option to catch exceptions or not
      *
      * @throws \ResourceNotFoundException When a controller not found occurs during processing
      * @throws \Exception When an Exception occurs during processing

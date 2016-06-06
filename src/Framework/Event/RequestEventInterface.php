@@ -47,7 +47,7 @@ interface RequestEventInterface
      * This event must have access to the current request, using an attribute
      * holding a Request.
      *
-     * @param Request $request A Request instance
+     * @param Request $request The Request instance
      *
      * @return RequestEvent The current interface
      *
@@ -60,7 +60,7 @@ interface RequestEventInterface
     /**
      * Get a stored event.
      *
-     * @return Request A current Request instance
+     * @return Request The current Request instance
      *
      * @api
      */

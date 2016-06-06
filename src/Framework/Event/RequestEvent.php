@@ -39,7 +39,7 @@ class RequestEvent extends Event implements RequestEventInterface
     /**
      * Constants.
      *
-     * @var string VERSION A version number
+     * @var string VERSION The version number
      *
      * @api
      */
@@ -87,7 +87,7 @@ class RequestEvent extends Event implements RequestEventInterface
      * This event must have access to the current request, using an attribute
      * holding a Request.
      *
-     * @param Request $request A Request instance
+     * @param Request $request The Request instance
      *
      * @return RequestEvent The current interface
      *
@@ -105,7 +105,7 @@ class RequestEvent extends Event implements RequestEventInterface
     /**
      * Get a stored event.
      *
-     * @return Request A current Request instance
+     * @return Request The current Request instance
      *
      * @api
      */

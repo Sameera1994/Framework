@@ -29,7 +29,7 @@ abstract class AbstractFramework implements FrameworkInterface
     /**
      * Constants.
      *
-     * @var string VERSION A version number
+     * @var string VERSION The version number
      *
      * @api
      */
@@ -40,9 +40,9 @@ abstract class AbstractFramework implements FrameworkInterface
     /**
      * Properties.
      *
-     * @static FrameworkInterface $instance        A static instance FrameworkInterface
-     * @static int                $objectCount     A static count of FrameworkInterface
-     * @var    array              $storageRegister A stored set of data structures used by this class
+     * @static FrameworkInterface $instance        The static instance FrameworkInterface
+     * @static int                $objectCount     The static count of FrameworkInterface
+     * @var    array              $storageRegister The stored set of data structures used by this class
      */
     protected static $instance;
     protected static $objectCount = 0;
