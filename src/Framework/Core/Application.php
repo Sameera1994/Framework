@@ -83,7 +83,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * Properties.
      */
     protected $routes;
-    protected $controller;
+    public $controller;
     protected $service;
     protected $dispatcher;
     protected $resolver;

@@ -25,25 +25,8 @@ use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 /**
- * Framework is the default implementation of {@link HttpKernelInterface} which
- * provides routine Framework methods that are commonly used in the framework.
- *
- * {@link AbstractFramework} is basically a adapter class for Symfony
- * HttpKernel Component which this class extends.
- *
- * Framework provides a event dispatch structured process for listening
- * to (HTTP) Request. Much like the standard like WSGI in Python or Rack in Ruby.
- *
- * If your code dispatches an event to the dispatcher, the dispatcher notifies all
- * registered listeners for the event, and each listener do whatever it wants
- * with the event.
- *
- * A well-known design pattern, the Observer pattern, allows any kind of behaviors
- * to be attached to our framework; the Symfony2 EventDispatcher Component
- * implements this pattern.
- *
- * Being extensible means that the developer should be able to easily hook into
- * the framework life cycle to modify the way the request is handled.
+ * BaseController is the default implementation of {@link Controller} which
+ * provides routine controller methods that are commonly used in the framework.
  *
  * Method list: (+) @api, (-) protected or private visibility.
  *
@@ -92,6 +75,19 @@ class BaseController extends Controller
      */
     public function __destruct()
     {
+
+    }
+
+    //--------------------------------------------------------------------------
+
+    /**
+     * Destructor.
+     *
+     * @api
+     */
+    public function reRoute(string $routeName, array $params, int $status = 301)
+    {
+        $this->redirectToRoute($newRoute, $params, $status);
 
     }
 
