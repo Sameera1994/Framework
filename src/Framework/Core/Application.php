@@ -83,6 +83,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      * Properties.
      */
     protected $routes;
+    protected $controller;
     protected $service;
     protected $dispatcher;
     protected $resolver;
@@ -107,6 +108,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
         $this->routes = $routes;
         $this->dispatcher = $dispatcher;
         $this->service = ServiceRequestContainer::serviceConnect();
+        $this->controller = new BaseController();
     }
 
     //--------------------------------------------------------------------------

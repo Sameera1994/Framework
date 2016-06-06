@@ -18,6 +18,7 @@
         "symfony/http-kernel": "3.1.0",
         "symfony/http-foundation": "3.1.0",
         "symfony/event-dispatcher": "3.1.0",
+        "symfony/framework-bundle": "3.1.0",
         "ucsdmath/functions": "1.7.x-dev",
         "ucsdmath/configuration": "1.7.x-dev",
         "ucsdmath/dependency-injection": "1.7.x-dev"
