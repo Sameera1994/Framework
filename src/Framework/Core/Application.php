@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace UCSDMath\Framework\Core;
 
-use UCSDMath\Framework\Framework;
 use Symfony\Component\Routing\Route;
 use UCSDMath\Framework\Event\RequestEvent;
 use Symfony\Component\HttpFoundation\Request;

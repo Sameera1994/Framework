@@ -18,10 +18,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
 use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
-use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
 
 /**
  * Framework is the default implementation of {@link HttpKernelInterface} which
@@ -159,7 +157,7 @@ class Framework extends AbstractFramework implements HttpKernelInterface, Framew
      */
     protected function throwControllerResolverExceptionError(): \Exception
     {
-        throw new Exception("The controller can not be resolved for the application. Please check that it exists.");
+        throw new \Exception("The controller can not be resolved for the application. Please check that it exists.");
     }
 
     //--------------------------------------------------------------------------
