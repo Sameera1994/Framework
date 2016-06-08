@@ -18,11 +18,11 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Matcher\UrlMatcher;
 use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
-use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
-use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Matcher\UrlMatcherInterface;
+use Symfony\Component\HttpKernel\Controller\ArgumentResolver;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
+use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
 
 /**
  * BaseController is the default implementation of {@link Controller} which

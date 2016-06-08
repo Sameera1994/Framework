@@ -13,20 +13,20 @@ declare(strict_types=1);
 
 namespace UCSDMath\Framework\Core;
 
+use UCSDMath\Framework\Framework;
+use Symfony\Component\Routing\Route;
+use UCSDMath\Framework\Event\RequestEvent;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Routing\RequestContext;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\RouteCollection;
+use Symfony\Component\Routing\Matcher\UrlMatcher;
+use UCSDMath\Framework\Core\ApplicationInterface;
+use Symfony\Component\HttpKernel\HttpKernelInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\RedirectResponse;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\HttpKernelInterface;
-use Symfony\Component\Routing\Exception\ResourceNotFoundException;
-use Symfony\Component\Routing\Matcher\UrlMatcher;
-use Symfony\Component\Routing\RequestContext;
-use Symfony\Component\Routing\Route;
-use Symfony\Component\Routing\RouteCollection;
 use UCSDMath\DependencyInjection\ServiceRequestContainer;
-use UCSDMath\Framework\Core\ApplicationInterface;
-use UCSDMath\Framework\Event\RequestEvent;
-use UCSDMath\Framework\Framework;
+use Symfony\Component\Routing\Exception\ResourceNotFoundException;
 
 /**
  * Application is the default implementation of {@link ApplicationInterface} which
