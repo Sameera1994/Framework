@@ -30,10 +30,8 @@ use Symfony\Component\HttpKernel\Controller\ArgumentResolverInterface;
  *
  * Method list: (+) @api, (-) protected or private visibility.
  *
- * (+) HttpKernelInterface __construct();
+ * (+) Controller __construct();
  * (+) void __destruct();
- * (+) Response handle(Request $request, int $type = HttpKernelInterface::MASTER_REQUEST, bool $catch = true);
- * (-) \Exception throwControllerResolverExceptionError();
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
  */
@@ -81,14 +79,19 @@ class BaseController extends Controller
     //--------------------------------------------------------------------------
 
     /**
-     * Destructor.
+     * Route to new location with name.
+     *
+     * @param string $routeName The route
+     * @param array  $params    The parameters
+     * @param int    $status    The status number
+     *
+     * @return void
      *
      * @api
      */
     public function reRoute(string $routeName, array $params, int $status = 301)
     {
-        $this->redirectToRoute($newRoute, $params, $status);
-
+        $this->redirectToRoute($routeName, $params, $status);
     }
 
     //--------------------------------------------------------------------------
