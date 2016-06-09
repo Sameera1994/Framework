@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace UCSDMath\Framework;
 
+use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 

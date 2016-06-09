@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace UCSDMath\Framework\Listener;
 
+use Symfony\Component\HttpKernel\Event\KernelEvent;
+
 /**
  * ControllerListenerInterface is the interface implemented by all Framework classes.
  *
@@ -44,7 +46,7 @@ interface ControllerListenerInterface
      *
      * @api
      */
-    public function onCoreController(Symfony\Component\HttpKernel\Event\KernelEvent $event);
+    public function onCoreController(KernelEvent $event);
 
     //--------------------------------------------------------------------------
 }
