@@ -21,7 +21,7 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  * Method list: (+) @api.
  *
  * (+) Symfony\Component\EventDispatcher\Event fire($event);
- * (+) void redirectRoute(string $newRoute, bool $trailFix = false);
+ * (+) void requestRoute(string $newRoute, bool $trailFix = false);
  * (+) UCSDMath\Framework\Core\ApplicationInterface startupApplication();
  * (+) Symfony\Component\HttpKernel\HttpKernelInterface on($event, $callback);
  * (+) Symfony\Component\HttpKernel\HttpKernelInterface map(string $path, $controller);
@@ -60,13 +60,15 @@ interface ApplicationInterface
     //--------------------------------------------------------------------------
 
     /**
-     * Redirect to a location.
+     * Route to location (RedirectResponse extends Response).
      *
-     * @param string $path The defined URI path
+     * @param string $destination The defined URI path
+     * @param bool   $trailFix    The fix for the trailing slash
      *
+     * @return Response The current Response
      * @api
      */
-    public function redirectRoute(string $path);
+    public function requestRoute(string $destination, bool $trailFix = false);
 
     //--------------------------------------------------------------------------
 

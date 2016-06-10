@@ -55,7 +55,7 @@ use Symfony\Component\Routing\Exception\ResourceNotFoundException;
  * (+) Symfony\Component\HttpKernel\HttpKernelInterface __construct($routes, $dispatcher);
  * (+) void __destruct();
  * (+) Symfony\Component\EventDispatcher\Event fire($event);
- * (+) void redirectRoute(string $newRoute, bool $trailFix = false);
+ * (+) void requestRoute(string $destination, bool $trailFix = false);
  * (+) UCSDMath\Framework\Core\ApplicationInterface startupApplication();
  * (+) Symfony\Component\HttpKernel\HttpKernelInterface on($event, $callback);
  * (+) Symfony\Component\HttpKernel\HttpKernelInterface map(string $path, $controller);
@@ -178,7 +178,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
         $response = null;
 
         if (! is_null($this->defaultRoute)) {
-            $this->redirectRoute($this->defaultRoute);
+            $this->requestRoute($this->defaultRoute);
         } else {
             $response = new Response($message, $error);
         }
@@ -189,19 +189,19 @@ class Application implements HttpKernelInterface, ApplicationInterface
     //--------------------------------------------------------------------------
 
     /**
-     * Sends the redirect (RedirectResponse extends Response).
+     * Route to location (RedirectResponse extends Response).
      *
-     * @param string $newRoute The defined URI path
-     * @param bool   $trailFix The fix for the trailing slash
+     * @param string $destination The defined URI path
+     * @param bool   $trailFix    The fix for the trailing slash
      *
-     * @return \Symfony\Component\HttpFoundation\Response The current Response
+     * @return Response The current Response
      * @api
      */
-    public function redirectRoute(string $newRoute, bool $trailFix = false)
+    public function requestRoute(string $destination, bool $trailFix = false)
     {
         $response = true === $trailFix
-            ? new RedirectResponse(rtrim($newRoute, '/\\').'/')
-            : new RedirectResponse($newRoute);
+            ? new RedirectResponse(rtrim($destination, '/\\').'/')
+            : new RedirectResponse($destination);
         $response->send();
     }
 
