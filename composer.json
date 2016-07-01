@@ -5,7 +5,7 @@
     "keywords": ["framework", "ucsdmath", "event", "core", "router", "dispatcher", "httpkernel", "component"],
     "homepage": "https://github.com/ucsdmath",
     "license": "MIT",
-    "time": "2016-03-01",
+    "time": "2016-07-03",
     "authors": [
         {
             "name": "Daryl Eisner",
@@ -14,11 +14,11 @@
     ],
     "require": {
         "php": ">=7.0.0",
-        "symfony/routing": "3.1.1",
-        "symfony/http-kernel": "3.1.1",
-        "symfony/http-foundation": "3.1.1",
-        "symfony/event-dispatcher": "3.1.1",
-        "symfony/framework-bundle": "3.1.1",
+        "symfony/routing": "3.1.2",
+        "symfony/http-kernel": "3.1.2",
+        "symfony/http-foundation": "3.1.2",
+        "symfony/event-dispatcher": "3.1.2",
+        "symfony/framework-bundle": "3.1.2",
         "ucsdmath/functions": "1.7.x-dev",
         "ucsdmath/configuration": "1.7.x-dev",
         "ucsdmath/dependency-injection": "1.7.x-dev"
