@@ -13,8 +13,8 @@
         <a href="https://travis-ci.org/ucsdmath/Framework">
         <img style="float: left; margin: 0px 0px 15px 15px;" src="https://travis-ci.org/ucsdmath/Framework.svg?branch=master"></a></td>
     <td width="250" align="center">
-        <a href="https://insight.sensiolabs.com/projects/ec2d4526-8fb0-4351-a697-0279dfaeed1c">
-        <img src="https://insight.sensiolabs.com/projects/ec2d4526-8fb0-4351-a697-0279dfaeed1c/big.png" style="float: right; margin: 0px 0px 15px 15px;" width="212" height="51"></a></td>
+        <a href="https://insight.sensiolabs.com/projects/a5855bd2-8a20-48e2-a97b-a3c704841f70">
+        <img src="https://insight.sensiolabs.com/projects/a5855bd2-8a20-48e2-a97b-a3c704841f70/big.png" style="float: right; margin: 0px 0px 15px 15px;" width="212" height="51"></a></td>
     <td width="180">
         <a href="https://www.versioneye.com/php/ucsdmath:framework">
         <img style="float: left; margin: 0px 0px 15px 15px;" src="https://www.versioneye.com/php/ucsdmath:framework/badge.png?branch=master"></a></td>
