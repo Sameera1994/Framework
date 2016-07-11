@@ -175,15 +175,9 @@ class Application implements HttpKernelInterface, ApplicationInterface
      */
     public function errorResponse(string $message, int $error): \Symfony\Component\HttpFoundation\Response
     {
-        $response = null;
-
-        if (! is_null($this->defaultRoute)) {
-            $this->requestRoute($this->defaultRoute);
-        } else {
-            $response = new Response($message, $error);
-        }
-
-        return $response;
+        return is_null($this->defaultRoute)
+            ? new Response($message, $error)
+            : $this->requestRoute($this->defaultRoute);
     }
 
     //--------------------------------------------------------------------------
