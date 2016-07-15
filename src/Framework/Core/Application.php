@@ -117,7 +117,6 @@ class Application implements HttpKernelInterface, ApplicationInterface
      */
     public function __destruct()
     {
-
     }
 
     //--------------------------------------------------------------------------

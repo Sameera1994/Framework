@@ -52,7 +52,6 @@ class BaseController extends Controller
      */
     public function __construct()
     {
-
     }
 
     //--------------------------------------------------------------------------
@@ -64,7 +63,6 @@ class BaseController extends Controller
      */
     public function __destruct()
     {
-
     }
 
     //--------------------------------------------------------------------------

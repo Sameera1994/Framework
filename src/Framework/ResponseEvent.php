@@ -79,7 +79,6 @@ class ResponseEvent extends Event implements ResponseEventInterface
      */
     public function __destruct()
     {
-
     }
 
     //--------------------------------------------------------------------------
