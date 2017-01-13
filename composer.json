@@ -14,11 +14,11 @@
     ],
     "require": {
         "php": ">=7.0",
-        "symfony/routing": "3.2.1",
-        "symfony/http-kernel": "3.2.1",
-        "symfony/http-foundation": "3.2.1",
-        "symfony/event-dispatcher": "3.2.1",
-        "symfony/framework-bundle": "3.2.1",
+        "symfony/routing": "3.2.2",
+        "symfony/http-kernel": "3.2.2",
+        "symfony/http-foundation": "3.2.2",
+        "symfony/event-dispatcher": "3.2.2",
+        "symfony/framework-bundle": "3.2.2",
         "ucsdmath/configuration": "1.13.x-dev",
         "ucsdmath/dependency-injection": "1.13.x-dev"
     },
