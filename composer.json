@@ -19,14 +19,14 @@
         "symfony/http-foundation": "3.2.2",
         "symfony/event-dispatcher": "3.2.2",
         "symfony/framework-bundle": "3.2.2",
-        "ucsdmath/configuration": "1.13.x-dev",
-        "ucsdmath/dependency-injection": "1.13.x-dev"
+        "ucsdmath/configuration": "1.13.0",
+        "ucsdmath/dependency-injection": "1.13.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.7",
         "phpunit/phpunit": "6.0.5",
         "fzaninotto/faker": "1.6.0",
-        "ucsdmath/date": "1.13.x-dev",
+        "ucsdmath/date": "1.13.0",
         "symfony/var-dumper": "3.2.2",
         "squizlabs/php_codesniffer": "2.8.0"
     },
