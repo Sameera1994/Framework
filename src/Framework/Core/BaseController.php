@@ -35,7 +35,7 @@ class BaseController extends Controller
      *
      * @api
      */
-    const VERSION = '1.13.0';
+    const VERSION = '1.14.0';
 
     //--------------------------------------------------------------------------
 
