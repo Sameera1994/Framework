@@ -78,7 +78,7 @@ class BaseController extends Controller
      *
      * @api
      */
-    public function reRoute(string $routeName, array $params, int $status = 301)
+    public function reRoute(string $routeName, array $params, int $status = 301): void
     {
         $this->redirectToRoute($routeName, $params, $status);
     }

@@ -95,7 +95,7 @@ class MathlinkControllerListener implements ControllerListenerInterface
      *
      * @api
      */
-    public function onCoreController(KernelEvent $event)
+    public function onCoreController(KernelEvent $event): void
     {
         if (HttpKernelInterface::MASTER_REQUEST === $event->getRequestType()) {
             $this->controller = $event->getController();

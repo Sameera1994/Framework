@@ -46,7 +46,7 @@ interface ControllerListenerInterface
      *
      * @api
      */
-    public function onCoreController(KernelEvent $event);
+    public function onCoreController(KernelEvent $event): void;
 
     //--------------------------------------------------------------------------
 }
