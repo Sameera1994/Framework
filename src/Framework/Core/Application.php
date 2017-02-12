@@ -281,6 +281,27 @@ class Application implements HttpKernelInterface, ApplicationInterface
     //--------------------------------------------------------------------------
 
     /**
+     * Add an extended controller class.
+     *
+     * @param string $controller The controller and method option
+     *
+     * @return \UCSDMath\Application\Controller
+     *
+     * @api
+     */
+    public function addController(string $controller)
+    {
+        [$class, $method] = strpos($controller, '::') ? explode('::', $controller) : [$controller, null];
+        [$appController, $class] = [sprintf('Controllers/%s', $class), sprintf('\UCSDMath\Application\Controller\%s', $class)];
+        $this->config->setRequiredClass($appController);
+        $instance = new $class();
+
+        return null === $method ? $instance : $instance->$method();
+    }
+
+    //--------------------------------------------------------------------------
+
+    /**
      * Bootstrap any needed resources for the core application.
      *
      * @return ApplicationInterface The current instance
