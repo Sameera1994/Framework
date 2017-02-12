@@ -281,7 +281,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
     //--------------------------------------------------------------------------
 
     /**
-     * Add an extended controller class.
+     * Add an extended controller class for the application.
      *
      * @param string $controller The controller and method option
      *
@@ -292,7 +292,10 @@ class Application implements HttpKernelInterface, ApplicationInterface
     public function addController(string $controller)
     {
         [$class, $method] = strpos($controller, '::') ? explode('::', $controller) : [$controller, null];
-        [$appController, $class] = [sprintf('Controllers/%s', $class), sprintf('\UCSDMath\Application\Controller\%s', $class)];
+        [$appController, $class] = [
+            sprintf('Controllers/%s%s', str_replace('Controller', '', $class), 'Controller'),
+            sprintf('\UCSDMath\Application\Controller\%s%s', str_replace('Controller', '', $class), 'Controller')
+        ];
         $this->config->setRequiredClass($appController);
         $instance = new $class();
 
