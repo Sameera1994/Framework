@@ -72,6 +72,7 @@ interface ApplicationInterface
      * @param bool   $trailFix    The fix for the trailing slash
      *
      * @return Response The current Response
+     *
      * @api
      */
     public function requestRoute(string $destination, bool $trailFix = false);
