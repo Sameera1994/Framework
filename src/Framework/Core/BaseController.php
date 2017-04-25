@@ -35,7 +35,7 @@ class BaseController extends Controller
      *
      * @api
      */
-    public const VERSION = '1.18.0';
+    public const VERSION = '1.19.0';
 
     //--------------------------------------------------------------------------
 
