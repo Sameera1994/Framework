@@ -70,15 +70,15 @@ class BaseController extends Controller
     /**
      * Route to new location with name.
      *
-     * @param string   $routeName The route
-     * @param iterable $params    The parameters
-     * @param int      $status    The status number
+     * @param string $routeName The route
+     * @param array  $params    The parameters
+     * @param int    $status    The status number
      *
      * @return void
      *
      * @api
      */
-    public function reRoute(string $routeName, iterable $params, int $status = 301): void
+    public function reRoute(string $routeName, array $params, int $status = 301): void
     {
         $this->redirectToRoute($routeName, $params, $status);
     }
