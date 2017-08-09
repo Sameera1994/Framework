@@ -74,7 +74,7 @@ class Application implements HttpKernelInterface, ApplicationInterface
      *
      * @api
      */
-    public const VERSION = '1.23.0';
+    public const VERSION = '1.24.0';
 
     //--------------------------------------------------------------------------
 
