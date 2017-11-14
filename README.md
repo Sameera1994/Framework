@@ -18,8 +18,6 @@
         <a href="https://travis-ci.org/ucsdmath/Framework"><img src="https://img.shields.io/badge/PHP-%207.1%20Tested%20-33cc33.svg"></a>
     </td>
     <td width="180" align="center">
-        <a href="https://www.versioneye.com/user/projects/577fba2e5bb1390040177ba8">
-        <img src="https://www.versioneye.com/user/projects/577fba2e5bb1390040177ba8/badge.png?style=flat" style="float:left;margin:0px 0px 10px 10px;"></a><br>
         <a href="https://codeclimate.com/github/ucsdmath/Framework">
         <img src="https://codeclimate.com/github/ucsdmath/Framework/badges/gpa.svg"></a><br>
         <a href="https://travis-ci.org/ucsdmath/Framework">
