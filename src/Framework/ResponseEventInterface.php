@@ -39,7 +39,7 @@ interface ResponseEventInterface
      * @var bool   REQUIRE_HTTPS         The secure setting TLS/SSL site requirement
      * @var string DEFAULT_TIMEZONE      The local timezone for the server (or set in ini.php)
      */
-    public const FRAMEWORK_MINIMUM_PHP = '7.1.0';
+    public const FRAMEWORK_MINIMUM_PHP = '7.1.3';
     public const DEFAULT_CHARSET       = 'UTF-8';
     public const CRLF                  = "\r\n";
     public const REQUIRE_HTTPS         = true;
