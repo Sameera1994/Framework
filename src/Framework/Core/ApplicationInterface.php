@@ -21,11 +21,11 @@ use Symfony\Component\HttpKernel\HttpKernelInterface;
  * Method list: (+) @api.
  *
  * (+) Symfony\Component\EventDispatcher\Event fire($event);
- * (+) void requestRoute(string $newRoute, bool $trailFix = false);
  * (+) UCSDMath\Framework\Core\ApplicationInterface startupApplication();
  * (+) Symfony\Component\HttpKernel\HttpKernelInterface on($event, $callback);
  * (+) Symfony\Component\HttpKernel\HttpKernelInterface map(string $path, $controller);
  * (+) Symfony\Component\HttpFoundation\Response errorResponse(string $message, int $error);
+ * (+) void requestRoute(string $destination, int $statusCode = 302, bool $trailFix = false);
  * (+) UCSDMath\Framework\Core\ApplicationInterface setDefaultRoute(string $defaultRoute = null);
  *
  * @author Daryl Eisner <deisner@ucsd.edu>
@@ -66,16 +66,17 @@ interface ApplicationInterface
     //--------------------------------------------------------------------------
 
     /**
-     * Route to location (RedirectResponse extends Response).
+     * Redirect to a new location (RedirectResponse extends Response).
      *
-     * @param string $destination The defined URI path
-     * @param bool   $trailFix    The fix for the trailing slash
+     * @param string $destination The URL or local location
+     * @param int    $statusCode  The HTTP Status Code
+     * @param bool   $trailFix    The option fix for the trailing slash
      *
-     * @return Response The current Response
+     * @return void
      *
      * @api
      */
-    public function requestRoute(string $destination, bool $trailFix = false);
+    public function requestRoute(string $destination, int $statusCode = 302, bool $trailFix = false): void;
 
     //--------------------------------------------------------------------------
 
