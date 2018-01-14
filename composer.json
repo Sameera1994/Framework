@@ -5,6 +5,7 @@
     "keywords": ["framework", "ucsdmath", "event", "core", "router", "dispatcher", "httpkernel", "component"],
     "homepage": "https://github.com/ucsdmath",
     "license": "MIT",
+    "version": "2.3.x-dev",
     "time": "2017-12-29",
     "authors": [
         {
@@ -49,5 +50,6 @@
             "dev-master": "2.3-dev"
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
