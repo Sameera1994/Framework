@@ -15,7 +15,7 @@
     <td width="250" align="center">
         <a href="https://insight.sensiolabs.com/projects/a55d300b-4f1c-40f1-9b7b-08c891f4d7c2">
         <img src="https://insight.sensiolabs.com/projects/a55d300b-4f1c-40f1-9b7b-08c891f4d7c2/big.png" style="float: right; margin: 0px 0px 10px 10px;" width="212" height="51"></a><br>
-        <a href="https://travis-ci.org/ucsdmath/Framework"><img src="https://img.shields.io/badge/PHP-%207.1%20Tested%20-33cc33.svg"></a>
+        <a href="https://travis-ci.org/ucsdmath/Framework"><img src="https://img.shields.io/badge/PHP-%207.2%20Tested%20-33cc33.svg"></a>
     </td>
     <td width="180" align="center">
         <a href="https://codeclimate.com/github/ucsdmath/Framework">
@@ -41,7 +41,7 @@
         <img src="https://poser.pugx.org/ucsdmath/Framework/v/stable"></a></td>
     <td valign="top" width="108" align="center">
         <a href="https://php.net/">
-        <img src="https://img.shields.io/badge/PHP-%3E%3D%207.1-8892BF.svg"></a></td>
+        <img src="https://img.shields.io/badge/PHP-%3E%3D%207.1.3-8892BF.svg"></a></td>
     <td valign="top" width="150" align="center">
         <a href="https://packagist.org/packages/ucsdmath/Framework">
         <img src="https://poser.pugx.org/ucsdmath/Framework/downloads"></a></td>
