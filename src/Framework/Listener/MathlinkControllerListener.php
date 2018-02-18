@@ -41,7 +41,7 @@ class MathlinkControllerListener implements ControllerListenerInterface
      *
      * @api
      */
-    public const VERSION = '2.3.0';
+    public const VERSION = '2.4.0';
 
     //--------------------------------------------------------------------------
 

@@ -44,7 +44,7 @@ class ResponseEvent extends Event implements ResponseEventInterface
      *
      * @api
      */
-    public const VERSION = '2.3.0';
+    public const VERSION = '2.4.0';
 
     //--------------------------------------------------------------------------
 
